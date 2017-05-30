@@ -7,6 +7,7 @@ class Wife extends Person {
         super();
         this.jobTitle = jobTitle;
         this.relationship = [];
+        this.relationship.push(jobTitle);
     }
 }
 //# sourceMappingURL=simple.js.map
