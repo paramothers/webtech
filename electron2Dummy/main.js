@@ -12,7 +12,7 @@ function createWidow(){
 
     win.loadURL(url.format({
 
-        pathname: path.join(__dirname,'net-module-use/http-client.html'),
+        pathname: path.join(__dirname,'ipc-module-use/index.html'),
         protocol:'file',
         slashes: true
     }));
