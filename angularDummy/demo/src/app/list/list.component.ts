@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  title: string='Testing of Directive and binding';
+  listItems: any[] = ['Move one','Move two','Move three','Move four','Move five'];
   constructor() { }
 
   ngOnInit() {
