@@ -1,11 +1,17 @@
 <p>
   list works!
 </p>
-
+<img [src] = "logoPath" /> 
 <h1>
   {{title}}
 </h1>
 
-<ul>
-   <li *ngFor="let item of listItems"> {{item}}</li>
+<ul *ngIf="listItems">
+   <li *ngFor="let item of listItems" appBold> {{item}} ?? </li>
 </ul>
+
+<button (click)="onSelecct()">Submit </button>
+
+{{user}}
+
+<input [(ngModel)] = 'user' [ngModelOptions]='{standalone:true}'>

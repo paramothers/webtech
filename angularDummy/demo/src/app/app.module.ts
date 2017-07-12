@@ -6,19 +6,22 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { SportComponent } from './sport/sport.component';
+import {MovielistService} from './services/movelist/movielist.service';
+import { BoldDirective } from './directives/bold/bold.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    SportComponent
+    SportComponent,
+    BoldDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MovielistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
