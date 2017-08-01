@@ -8,13 +8,17 @@ import { ListComponent } from './list/list.component';
 import { SportComponent } from './sport/sport.component';
 import {MovielistService} from './services/movelist/movielist.service';
 import { BoldDirective } from './directives/bold/bold.directive';
+import { ServersComponent } from './servers/servers.component';
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     SportComponent,
-    BoldDirective
+    BoldDirective,
+    ServersComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
