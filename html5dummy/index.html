@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML 5 crush Course</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        localStorage.clear();
+        console.log("length " + localStorage.length);
+        localStorage.setItem("name", "paramasivam");
+        // console.log("item " + localStorage.name);
+
+        for (let k = 0; k < localStorage.length; k++) {
+            console.log("keyname  " + localStorage.key(k));
+        }
+    </script>
+    <a href="semantic.html">Go to Semantic</a>
+    <div class="container">
+        <!-- Heading -->
+        <h1>HTML 5 crush course</h1>
+        <!-- Paragraph -->
+        <p>Lorem ipsum dolor <em>sit amet</em>, consectetur <strong>adipisicing elit</strong>. Placeat,
+            <a href="http://www.google.com" target="_blank">libero.</a>
+        </p>
+        <ul>
+            <li>one</li>
+            <li>one</li>
+            <li>one</li>
+        </ul>
+        <form>
+            <div>
+                <input type="number" name="age" value="23">
+            </div>
+            <br>
+            <div>
+                <input type="date" name="BirthDAte" value="">
+            </div>
+        </form>
+
+        <button type="menu">Clicke Mine me</button>
+        <p class="text-uppercase">Lorem</p>
+        <p class="bg-primary">Lorem</p>
+        <p class="bg-success">Lorem</p>
+        <p>Lorem</p>
+
+        <code>heading elelemtn</code>
+        <kbd>ctrl+c</kbd>
+
+    </div>
+
+    <div style="height :400px">
+
+    </div>
+
+    <script src="js/bootstrap.min.js">
+
+    </script>
+</body>
+
+</html>

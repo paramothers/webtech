@@ -1,0 +1,193 @@
+/**{
+    margin: 0px;
+    padding: 0px;
+}*/
+
+body {
+    background-color: #f4f4f4;
+    color: #555;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    /* Shortened*/
+    line-height: 1.8em;
+    margin: 20px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: red;
+}
+
+a:visited {
+    /*color: #333;*/
+}
+
+a:active {
+    color: green;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+.button {
+    border: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+.button:hover {
+    background-color: red;
+    color: white;
+}
+
+.box-1 {
+    background-color: #333;
+    color: #fff;
+    /*border-right: 5px;*/
+    /*border-right-color: red;*/
+    /*border-right-style: solid;*/
+    border: 5px red solid;
+    /*padding: 0px;*/
+    border-width: 2px;
+    border-bottom-width: 5px;
+    border-top-style: dotted;
+    border-left-style: double;
+    margin: 2px;
+}
+
+.doubleBorder {
+    border: 2px blue solid
+}
+
+.box-1 h1 {
+    font-family: Tahoma;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.box-2 {
+    border: 1px dotted #ccc;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.categories {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.categories h2 {
+    text-align: center;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.categories li {
+    padding-bottom: 8px;
+    border-bottom: dotted 1px black;
+}
+
+
+/*form */
+
+.my-form {
+    padding: 5px;
+}
+
+.my-form .form-group {
+    padding-bottom: 20px;
+}
+
+.my-form label {
+    display: block;
+}
+
+.my-form input[type="text"], .my-form textarea {
+    width: 100%;
+    padding: 8px;
+}
+
+.block {
+    float: left;
+    width: 33.3%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box
+}
+
+.clear {
+    clear: both;
+}
+
+.main-block {
+    width: 70%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    float: right;
+    width: 30%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.p-box {
+    border: 1px solid #333;
+    padding-left: 10px;
+    width: 800px;
+    height: 400px;
+    position: relative;
+    background-image: url("../images/bgimage.jpeg");
+    /*background-repeat:no-repeat;*/
+    background-position: 10px 30px;
+    background-position: center top;
+}
+
+.p-box h1 {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+}
+
+.p-box h2 {
+    position: absolute;
+    bottom: 100px;
+    right: 200px;
+}
+
+.fix-me {
+    position: fixed;
+    top: 100px;
+}
+
+.my-list li:first-child {
+    background: red;
+}
+
+.my-list li:last-child {
+    background: blue;
+}
+
+.my-list li:nth-child(even) {
+    background: yellow;
+}
+
+.my-list li:nth-last-child(2){
+background: gray;
+}
