@@ -1,0 +1,28 @@
+{
+  "name": "expressstudy",
+  "version": "1.0.0",
+  "description": "exploring Express and other Middleware web-server-side application development using javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paramothers/webtech.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Paramothers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paramothers/webtech/issues"
+  },
+  "homepage": "https://github.com/paramothers/webtech#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "multer": "^1.3.0"
+  }
+}
