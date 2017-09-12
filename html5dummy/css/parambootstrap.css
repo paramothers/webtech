@@ -1,0 +1,29 @@
+/*h1 {
+    box-sizing: content-box;
+    text-decoration: underline;
+}*/
+
+/*@include media-breakpoint-up(xs){
+    
+    .someclass{
+        display:block;
+    }
+}*/
+
+@media(max-width:575px){
+    
+    .simpleOne{
+        display:block;
+    }
+}
+
+@media(min-width: 576px) and (max-width:767px){
+    .simpleTwo{
+        display: none;
+    }
+}
+
+.col{
+    /*border: 1px solid transparent;*/
+    flex : 1 0 50%;
+}
