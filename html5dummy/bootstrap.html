@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-    
+
     <title>Cute</title>
-     <!-- Required meta tags -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <!-- below meta tags used by media queries -->    
+    <!-- below meta tags used by media queries -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CDN for bootstrap 4 -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" 
-    >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/parambootstrap.css" type="text/css" />
 </head>
 
@@ -19,22 +18,190 @@
 
 
     <div class="container">
-        <h1 class="page-header">Hello World! <small>Secondary Text</small> </h1>        
-        <p class="lead">Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Quaerat, officia.</p>
-        <p>Lorem ipsum dolor sit amet, <del>consectetur adipisicing elit.</del> Vitae totam, 
-        mollitia! Quo ullam <u>minima ratione</u>, placeat quisquam repellat, ullam consequuntur sint rem sunt, pariatur molestiae modi eveniet natus officia nam molestias.</p>
+        <h1 class="page-header">Hello World! <small>Secondary Text</small> </h1>
+        <p class="lead">Lorem ipsum dolor sit amet,
+            <mark>consectetur</mark> adipisicing elit. Quaerat, officia.</p>
+        <p>Lorem ipsum dolor sit amet,
+            <del>consectetur adipisicing elit.</del> Vitae totam, mollitia! Quo ullam
+            <u>minima ratione</u>, placeat quisquam repellat, ullam consequuntur sint rem sunt, pariatur molestiae modi eveniet
+            natus officia nam molestias.</p>
 
-        <p class="text-left">Lorem ipsum dolor sit amet.</p>
+        <p class="text-left text-capitalize">Lorem ipsum dolor sit amet.</p>
         <p class="text-right">Lorem ipsum dolor sit amet.</p>
         <p class="text-center">Lorem ipsum dolor sit amet.</p>
         <p class="text-capitalize">Lorem ipsum dolor sit amet.</p>
         <p class="text-uppercase">Lorem ipsum dolor sit amet.</p>
+
+        <hr>
+        <div class="pull-right">
+            div element floating on right side Lorem ipsum dolorcing elit. Voluptate, molestiae.
+
+        </div>
+        <div class="pull-left">
+            div elemement on left , consectetur adipisicing elit. Quo, sint.
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+
+        <blockquote class="blockquote-reverse">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, suscipit.</p>
+            <footer>
+                qutoed by <cite title="Paramsivam"></cite> paramsivam
+            </footer>
+        </blockquote>
+        <hr>
+
+        <ul class="list-unstyled">
+            <li>list itme one </li>
+            <li>list itme two </li>
+            <li>list itme three </li>
+            <li>list itme four </li>
+        </ul>
+
+        <ul class="list-inline">
+            <li>list itme one </li>
+            <li>list itme two </li>
+            <li>list itme three </li>
+            <li>list itme four </li>
+        </ul>
+
+        <code>&lt;h1&gt; Heeed &lt;/h1&gt; </code>
+        <br>
+        <kbd>ctl+c</kbd>
+
+        <hr>
+        <p class="text-primary">Hello world</p>
+        <p class="text-info">Hello world</p>
+        <p class="text-warning">Hello world</p>
+        <p class="text-danger">Hello world</p>
+        <p class="text-muted">Hello world</p>
+        <p class="text-success">Hello world</p>
+
+        <hr>
+        <p class="bg-primary">Hello world</p>
+        <p class="bg-info">Hello world</p>
+        <p class="bg-warning">Hello world</p>
+        <p class="bg-danger">Hello world</p>
+        <p class="bg-muted">Hello world</p>
+        <p class="bg-success">Hello world</p>
+
     </div>
+    <hr>
+    <div class="container">
+        <button class="btn  btn-default">Button</button>
+        <a href="#" class="btn btn-default">Link</a>
+        <input type="submit" class="btn btn-default" value="Submit">
+
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-primary">Primay</button>
+        <button class="btn btn-info">Primay</button>
+        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-warning">warning</button>
+        <button class="btn btn-link">link</button>
+
+        <br>
+        <button class="btn btn-success btn-lg">Large</button>
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-warning btn-sm">Small</button>
+        <button class="btn btn-danger btn-xs" disabled="disabled">Extr Small</button>
+
+        <hr>
+        <form action="">
+            <div class="form-control-feedback">
+                <label>Add Name</label>
+                <input class="form-control" type="text" name="userName" placeholder="Add Name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="email" name="email" placeholder="Add Email">
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-control" placeholder="Add message"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <select class="form-control">
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+              </select>
+            </div>
+
+            <div class="checkbox">
+                <label><input type="checkbox"> Remember Me</label>
+            </div>
+
+
+
+            <input type="submit" class="btn btn-defult" value="Submit">
+            <input type="submit" class="btn btn-secondary" value="Submit">
+        </form>
+
+        <hr>
+        <table class="table table-sm table-hover table-bordered table-striped table-info">
+            <thead class="thead-inverse">
+                <th>name</th>
+                <th>email</th>
+                <th>age</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>param</td>
+                    <td>param@gmail.com</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>ganesan</td>
+                    <td>ganesan@gmail.com</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>param</td>
+                    <td>param@gmail.com</td>
+                    <td>36</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item">one</li>
+            <li class="list-group-item">one</li>
+            <li class="list-group-item">one</li>
+            <li class="list-group-item">one</li>            
+        </ul>
+
+        <div class="list-group">    
+            <a href="#" class="list-group-item">one</a>
+            <a href="#" class="list-group-item list-group-item-primary">one</a>
+            <a href="#" class="list-group-item list-group-item-danger">one</a>
+            <a href="#" class="list-group-flush">one</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <br>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
-    <script src="js/bootstrap.min.js" ></script>
-    
-          
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
 </body>
 
 </html>
