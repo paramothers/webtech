@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script type="text/javascript" >
+            
+            var headers = new Headers({
+                'Content-Type':'text/plain'
+            });
+            headers.append("Content-type","text/plain");
+            headers.append("SimpleKey","simpleValue");
+            
+            document.write(headers.has("Content-type"));
+            document.write(headers.get("SimpleKey"));
+            
+            
+            
+            window.fetch("www.javaworld.com", {
+                method:"get"
+            }).then(function(response){
+                
+                console.log(response);
+                 document.write(response);  
+            }).catch(function(err){
+                console.log(err);
+                document.write(err);
+            });
+            
+        </script>
+        
+        <h2>Fetch API running</h2>
+    </body>
+</html>
