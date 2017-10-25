@@ -25,3 +25,5 @@ app.get('*', function(req, res) { res.sendFile(__dirname + "/public/index.html")
 // json app.get('*.json', function (req, res) {res.sendFile(__dirname+"/public/"+req.path); });
 
 app.listen(port, function() { browserSync({ proxy: 'localhost:' + port, files: ['source/**/*.{jsx}', 'public/**/*.{css}'], options: { ignored: 'node_modules' } }); });
+
+
