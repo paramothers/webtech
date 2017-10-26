@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{meassge}}
+        </div>
+        <div id="app2">
+            <span v-bind:title="message2">
+                  Hover your mouse over me for a few seconds
+                 to see my dynamically bound title!
+            </span>
+        </div>
+        
+        <div id="app3">
+            <span v-if="seen"> you are seeig me</span>
+        </div>
+        
+        <div id="app4">
+            <ul>
+               <li v-for="todo in todos">
+                   {{todo.text}}
+               </li> 
+            </ul>
+            
+        </div>
+        
+    </body>
+    <script type="text/javascript">
+        
+        var app4 = new Vue({
+            
+            el: "#app4",
+            data:{
+                
+                todos :[
+                    {text: 'Angular js'},
+                    {text: 'React JS'},
+                    {text: 'Vue.js'},
+                    ],
+            }
+        });
+        
+        var app = new Vue({
+            el :"#app",
+            data:{
+                meassge : "Hellow Vue",
+            }
+        });
+        
+        var app2 = new Vue({
+            el: '#app2',
+            data:{
+                message2: 'You loaded this page on ' + new Date().toLocaleString() 
+            }
+        });
+        
+        var app3 = new Vue({
+            el: "#app3",
+            data :{
+                seen: true,
+            }
+        });
+        
+    </script>
+</html>

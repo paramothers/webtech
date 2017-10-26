@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class ShoppingList extends React.Component{
-    
-    render(){
-        return (
-            <div className = "shopping-list"> 
+class ShoppingList extends React.Component {
+
+  render() {
+    return (
+      <div className = "shopping-list"> 
              <h1> Shoping List for {this.props.name}</h1>
               <ul>
                <li>sample1 3</li>
@@ -14,36 +14,58 @@ class ShoppingList extends React.Component{
                <li>idly</li>
               </ul>
             </div>
-            );
-    }
-}
-
-class Square extends React.Component {
-    
-    constructor(props){
-        super(props);
-        this.state  = {
-            value : null,
-        };
-        
-    }
-    
-  render() {
-    return (
-      <button className="square" onClick={()=> {this.setState({value: 'X'})}}>
-        {this.state.value}
-      </button>
     );
   }
 }
 
+
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+        {props.value}
+      </button>
+  );
+}
+
+
+
 class Board extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+      squares: Array(9).fill(null),
+      player: {
+
+        name: "param",
+        score: 12,
+      },
+      isNext: true,
+    }
+
+  }
+
   renderSquare(i) {
-    return <Square value={i}/>;
+    return <Square value={this.state.squares[i]} 
+      onClick = {()=> this.handleClick(i)}
+    />;
+  }
+
+
+  handleClick(i) {
+
+    const square = this.state.squares.slice();
+    square[i] = this.state.isNext ? 'X' : 'O';
+    this.setState({
+      squares: square,
+      isNext: !this.state.isNext,
+    });
+
   }
 
   render() {
-    const status = 'Next player: ui 5';
+    const status = 'Next player:' + (this.state.isNext ? 'X' : 'O');
 
     return (
       <div>
