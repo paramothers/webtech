@@ -1,0 +1,15 @@
+{
+  "name": "angularfirestore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angularfire2": "^5.0.0-rc.3",
+    "firebase": "^4.6.2"
+  }
+}
