@@ -1,5 +1,34 @@
 <h1>
   {{title}}
 </h1>
-<app-hero></app-hero>
+
+<p>Image is interploated
+  <img src="{{myImageUrl}}">
+</p>
+<p>
+  image is property find
+
+  <img [src]="myImageUrl" alt="image not found" />
+</p>
+<hr>
+<p class="bad curly special" [class]="badCurly">{{evilTitle}}</p>
+<div [class.special]="isSpecial">
+this is class binding special
+</div>
+<table border=1>
+  <tr >
+    <td [attr.colspan]="colspan">one</td>
+  </tr>
+  <tr>
+    <td class="one two three" [class]="someSimple">one</td>
+    <td>two</td>
+  </tr>
+</table>
+
+<button [style.color]="isSpecial? 'red': 'blue'">This is styled button</button>
+
+<button [style.background-color]="'cyan'" (click)="onSave()">Save button</button>
+
+<input [value] = "pavalanName" (input)="pavalanName = $event.target.value">
+
 
