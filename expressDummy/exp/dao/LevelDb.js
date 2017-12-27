@@ -6,8 +6,8 @@ const levelup = require('levelup');
 const leveldown =  require('leveldown');
 const db = levelup(leveldown('../db'),{ valueEncoding : 'json' }, (err, db)=>{
   
-      console.log(' 1 db has opened ?  '+db.isOpen());
-      console.log('1 db has closed ? '+db.isClosed());
+      // console.log(' 1 db has opened ?  '+db.isOpen());
+      // console.log('1 db has closed ? '+db.isClosed());
   });
 // db.put('wife', 'Padmasankari', function(err) {
 //   if (err) return console.log('Ooops!', err)
@@ -52,7 +52,7 @@ db.put('employee', empl, (err) => {
   db.get('employee5', function(err, value) {
     if (err.notFound) return console.log('Ooops!', err)
 
-   // console.log('\n emplyee \n ' + JSON.stringify(value));
+   console.log('\n emplyee \n ' + JSON.stringify(value));
   }) 
 })
 
@@ -134,5 +134,5 @@ stream.on('error', (err)=>{
 //   console.log('2 db has opened ?  '+db.isOpen());
 //   console.log('2 db has closed ? '+db.isClosed());
 // });
-
+console.log("completed DB ");
 
