@@ -11,7 +11,6 @@ const app = express();
 middlewareConfig.config(app);
 routerConfig.config(app);
 app.use(traceMiddleware.trace);
-//https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
 // app.get('/', (req,res)=>{
 //     console.log('request received');
 //     console.log('how to print current version express JS framework has used');
