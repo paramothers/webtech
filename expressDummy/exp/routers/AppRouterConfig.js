@@ -24,6 +24,7 @@ module.exports.configure = function(app) {
   app.use(parameterRouter);
   app.use(miscRouter);
   
+  
   //body parser configuration
   app.use(bodyParser.urlencoded({
     extended:true
