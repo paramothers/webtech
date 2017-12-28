@@ -1,6 +1,5 @@
 const express =  require('express');
 
-
 const square = require('./misc/square');
 const middlewareConfig = require('./appconfig/MiddlewareConfig');
 const routerConfig = require('./appconfig/RouterConfig');
@@ -11,6 +10,8 @@ middlewareConfig.configCustomTraceMiddleware(app);
 middlewareConfig.configBuiltinMiddleware(app);
 routerConfig.config(app);
 middlewareConfig.configErrorMiddleware(app);
+
+
 
 
 // app.get('/', (req,res)=>{
@@ -30,3 +31,5 @@ app.listen(3000, ()=>{
    console.log('Server listen at 3000'); 
    console.log('square value of '+ square.area(4));
 });
+
+module.exports.rootPath = __dirname;
