@@ -2,15 +2,17 @@ const express =  require('express');
 
 
 const square = require('./misc/square');
-const middlewareConfig = require('./expressconfig/MiddlewareConfig');
-const routerConfig = require('./expressconfig/RouterConfig');
-const traceMiddleware = require('./middleware/TraceMiddleware');
+const middlewareConfig = require('./appconfig/MiddlewareConfig');
+const routerConfig = require('./appconfig/RouterConfig');
 
 const app = express();
 
-middlewareConfig.config(app);
+middlewareConfig.configCustomTraceMiddleware(app);
+middlewareConfig.configBuiltinMiddleware(app);
 routerConfig.config(app);
-app.use(traceMiddleware.trace);
+middlewareConfig.configErrorMiddleware(app);
+
+
 // app.get('/', (req,res)=>{
 //     console.log('request received');
 //     console.log('how to print current version express JS framework has used');
