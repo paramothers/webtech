@@ -7,17 +7,12 @@
     "devstart": "nodemon ./bin/www"
   },
   "dependencies": {
-    "async": "^2.6.0",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
-<<<<<<< HEAD
     "jade": "~1.11.0",
     "mongoose": "^5.0.0-rc0",
-=======
-    "pug": "latest",
->>>>>>> f8f64ad6a469f501f9ff2c405c6e126641329537
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5"
   },
