@@ -1,23 +1,24 @@
-const Author = require('../models/author');
+var Author = require('../models/author');
 
-exports.authorList = function(req, res){
-    res.send('Author List not yet implemented');
-}
+// Display list of all Authors
+exports.author_list = function(req, res) {
+    res.send('NOT IMPLEMENTED: Author list');
+};
 
-exports.authorDetail = function(req, res){
-    
-    res.send('Author detail is not implemented ');
-}
+// Display detail page for a specific Author
+exports.author_detail = function(req, res) {
+    res.send('NOT IMPLEMENTED: Author detail: ' + req.params.id);
+};
 
-exports.authorCreateGET = function(req,res){
-    
-    res.send('create author is not yet implmented ');
-}
+// Display Author create form on GET
+exports.author_create_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Author create GET');
+};
 
-exports.authorCreatePOST = function(req, res){
-    
-    res.send(' create Author POST is not implemented');
-}
+// Handle Author create on POST
+exports.author_create_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Author create POST');
+};
 
 // Display Author delete form on GET
 exports.author_delete_get = function(req, res) {
