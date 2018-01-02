@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 const helmet = require('helmet');
+const pug = require('pug');
 
 var index = require('./routes/index');
 var users = require('./routes/users');

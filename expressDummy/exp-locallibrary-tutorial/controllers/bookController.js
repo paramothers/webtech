@@ -1,7 +1,33 @@
 var Book = require('../models/book');
+const BookInstance = require('../models/bookinstance');
+const Author = require('../models/author');
+const Genre = require('../models/genre');
+
+const async = require('async');
+
 
 exports.index = function(req, res) {
-    res.send('NOT IMPLEMENTED: Site Home Page');
+    
+    async.parallel({
+        
+        book_count : function(callback){
+            Book.count(callback);
+        },
+        book_instance_count: function(callback){
+            BookInstance.count(callback);
+        },
+        author_count: function(callback){
+            Author.count(callback);
+        },
+        genre_count: function(callback){
+            Genre.count(callback);
+        }
+    },
+    function(err, result){
+        
+        res.render('index',{title:'Library Home page', error: err, data:result});
+    });
+    
 };
 
 // Display list of all books
