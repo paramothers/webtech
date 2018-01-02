@@ -12,7 +12,7 @@ var users = require('./routes/users');
 const catelog = require('./routes/catelog');
 
 var app = express();
-console.log("1");
+console.log("Open Mongo DB connection");
 //connect to MongoDB in mlab
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://paramothers2:Penn1234@ds141796.mlab.com:41796/employee';
@@ -23,10 +23,12 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+console.log("DB Connection obtained, register templates pug");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-console.log("2");
+
+console.log("Register templates engine, configure 3rd party middleare");
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -38,14 +40,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-console.log("3");
 
 
+console.log("Configured 3rd party middleare, configure routers ");
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/catelog', catelog);
 
+console.log("Configure routers, configure default error and 404 middleware ");
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -64,4 +67,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+console.log("Express app configuration has completed !");
 module.exports = app;
