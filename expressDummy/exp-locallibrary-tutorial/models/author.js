@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment =  require("moment");
 const Schema = mongoose.Schema;
 
 const AuthorSchema = new Schema({
@@ -9,7 +10,12 @@ const AuthorSchema = new Schema({
     death_date: { type: Date }
 });
 
-AuthorSchema.virtual('name').get(()=> { return this.first_name+", "+this.family_name});
-AuthorSchema.virtual('url').get(() => {return '/catalog/author/'+this._id});
+AuthorSchema.virtual('name').get(function(){ return this.first_name+", "+this.family_name});
+AuthorSchema.virtual('url').get(function() {return '/catalog/author/'+this._id});
+AuthorSchema.virtual('formatedBirthDate').get(function(){ return this.birth_date ? moment(this.birth_date).format('YYYY-MM-DD'):''});
+
+AuthorSchema.methods.speak = function(){
+    console.log('Authoer is speaking');
+}
 
 module.exports = mongoose.model('Author', AuthorSchema);

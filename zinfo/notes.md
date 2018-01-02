@@ -13,3 +13,10 @@ Scaling
 
 horizontal scalling - adding more number of machine but no need to powerful.
 Vertical scalling - add more powerful machine.
+
+mongoose API
+----------
+
+Schema,
+
+mongoose events are open, error

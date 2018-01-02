@@ -23,6 +23,9 @@ mongoose.connect(mongoDB, {
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', ()=>{
+  console.log('connection with DB obtained');
+})
 
 console.log("DB Connection obtained, register templates pug");
 // view engine setup
@@ -47,7 +50,7 @@ console.log("Configured 3rd party middleare, configure routers ");
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/catelog', catelog);
+app.use('/catalog', catelog);
 
 console.log("Configure routers, configure default error and 404 middleware ");
 // catch 404 and forward to error handler
