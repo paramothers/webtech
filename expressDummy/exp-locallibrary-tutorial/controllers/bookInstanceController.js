@@ -12,7 +12,7 @@ exports.bookinstance_list = function(req, res, next) {
                     if(err){
                         return next(err);
                     }else{
-                       res.render('bookinstance_list',{ title: 'Book Instance list', bookinstance_list: list_bookinstances }); 
+                       res.render('bookinstance/bookinstance_list',{ title: 'Book Instance list', bookinstance_list: list_bookinstances }); 
                     }
                 });
 };
@@ -32,7 +32,7 @@ exports.bookinstance_detail = function(req, res, next) {
                         return next(error);
                     }
                     
-                    res.render('bookinstance_detail', {title: 'Book', bookinstance:result});
+                    res.render('bookinstance/bookinstance_detail', {title: 'Book', bookinstance:result});
                 })
 };
 
@@ -42,7 +42,7 @@ exports.bookinstance_create_get = function(req, res, next) {
     Book.find({},'title')
         .exec(function(err, result){
             if(err) return next(err);
-            res.render('bookinstance_form',{title:'Book Instance create', book_list:result});
+            res.render('bookinstance/bookinstance_form',{title:'Book Instance create', book_list:result});
         });
 };
 
@@ -74,7 +74,7 @@ exports.bookinstance_create_post = [
             Book.find({},'title')
                 .exec(function(err, books){
                     if(err) return next(err);
-                    res.render('bookinstance_form',{title: 'Instance Create', book_list:books, errors:validationErrors.array(),selected_book:bookInstance.book._id,bookInstance:bookInstance});
+                    res.render('bookinstance/bookinstance_form',{title: 'Instance Create', book_list:books, errors:validationErrors.array(),selected_book:bookInstance.book._id,bookInstance:bookInstance});
                 });
                 return;
         }else{

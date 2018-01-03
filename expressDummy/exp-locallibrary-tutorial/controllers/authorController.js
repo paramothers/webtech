@@ -16,7 +16,7 @@ exports.author_list = function(req, res,next) {
                   return next(err);
               }
               
-              res.render('author_list',{title:'Author List', author_list: result});
+              res.render('author/author_list',{title:'Author List', author_list: result});
           });
 };
 
@@ -44,15 +44,16 @@ exports.author_detail = function(req, res,next) {
            let error = new Error('Author not found');
            error.status = 404;
            return next(error);
+           
        }
-       res.render('author_detail',{title: 'Author Detail', author: result.author, author_books:result.author_books});
+       res.render('author/author_detail',{title: 'Author Detail', author: result.author, author_books:result.author_books});
    });
 };
 
 // Display Author create form on GET
 exports.author_create_get = function(req, res) {
    
-   res.render('author_form',{title:'Create Author'});
+   res.render('author/author_form',{title:'Create Author'});
 };
 
 // Handle Author create on POST
@@ -82,7 +83,7 @@ exports.author_create_post = [
         
         if(!errors.isEmpty()){
             
-            res.render('author_form',{title: 'Create Authoer', author:author, errors:errors.array()});
+            res.render('author/author_form',{title: 'Create Authoer', author:author, errors:errors.array()});
             return;
         }else{
             
