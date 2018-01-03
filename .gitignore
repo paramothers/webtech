@@ -3,3 +3,6 @@
 **/platforms/
 **/plugins/
 .vscode/
+**/npm-debug.log
+**/.DS_Store
+/*.env
