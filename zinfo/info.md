@@ -1,5 +1,14 @@
-mongo ds141796.mlab.com:41796/employee -u paramothers -p Penn1234
 
 mongo ds141796.mlab.com:41796/employee -u paramothers2 -p Penn1234
 
 mongodb://paramothers2:Penn1234@ds141796.mlab.com:41796/employee
+
+
+# [Express Tutorial Part 6: Working with forms - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms)
+
+## Orange
+* An HTML Form is a group of one or more fields/widgets on a web page that can be used to collect information from users for submission to a server
+
+
+## Orange
+* The GET method should only be used for forms that don't change user data (e.g. a search form). It is recommended for when you want to be able to bookmark or share the URL.
