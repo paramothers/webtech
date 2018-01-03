@@ -72,4 +72,14 @@ app.use(function(err, req, res, next) {
 });
 
 console.log("Express app configuration has completed !");
+
+app.disconnect = function(){
+ 
+  mongoose.connection.close(function () {
+      console.log('Mongoose connection disconnected');
+    });
+  
+  setTimeout(()=>{console.log('cleaned !!');},2000)
+}
+
 module.exports = app;

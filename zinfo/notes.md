@@ -1,4 +1,5 @@
- 
+
+comaring with JAVA, in  JS we use more comma(,) seprate statements 
  
 
 Cloud types
