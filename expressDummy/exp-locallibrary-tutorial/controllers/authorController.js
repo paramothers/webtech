@@ -96,13 +96,56 @@ exports.author_create_post = [
     ];
 
 // Display Author delete form on GET
-exports.author_delete_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Author delete GET');
+exports.author_delete_get = function(req, res,next) {
+
+    async.parallel({
+
+        author: function(callback){
+                    Author.findById(req.params.id).exec(callback);
+        },
+
+        booksList : function(callback){
+                   Book.find({'author':req.params.id}).exec(callback);
+        }
+
+    }, function(err, result){
+
+        if(err) return next(err);
+        if(result.author == null) res.redirect('/catalog/authors');
+        res.render('author/author_delete', {title: 'Delete Author',author:result.author, author_books:result.booksList});
+    });
 };
 
 // Handle Author delete on POST
-exports.author_delete_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Author delete POST');
+exports.author_delete_post = function(req, res, next) {
+   
+    async.parallel({
+
+        author: function(callback){
+            Author.findById(req.body.authorid).exec(callback);
+        },
+        bookList: function(callback){
+           Book.find({'author':req.body.authorid}).exec(callback);
+        }
+
+    }, function(err,result){
+
+        if(err) return next(err);
+        if(result.bookList.length > 0){
+            res.render('author/author_delete',{
+                title:'Delete Author',
+                author: result.author,
+                author_books:result.bookList
+            });
+            return;
+        }else{
+            Author.findByIdAndRemove(req.body.authorid, function(err){
+                if(err) return next(err);
+                res.redirect('/catalog/authors');
+            })
+        }
+
+    });
 };
 
 // Display Author update form on GET
