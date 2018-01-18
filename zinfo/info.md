@@ -12,3 +12,11 @@ mongodb://paramothers2:Penn1234@ds141796.mlab.com:41796/employee
 
 ## Orange
 * The GET method should only be used for forms that don't change user data (e.g. a search form). It is recommended for when you want to be able to bookmark or share the URL.
+
+
+To update into heroku
+--------------------
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
