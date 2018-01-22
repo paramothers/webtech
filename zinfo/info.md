@@ -3,6 +3,10 @@ mongo ds141796.mlab.com:41796/employee -u paramothers2 -p Penn1234
 
 mongodb://paramothers2:Penn1234@ds141796.mlab.com:41796/employee
 
+NoSQL DBs book https://1drv.ms/u/s!AiGPO1S_TzlThBXdjUMbczO0t6JZ
+code on web https://1drv.ms/u/s!AiGPO1S_TzlThCmRyip3p5lxrPbM
+
+
 
 # [Express Tutorial Part 6: Working with forms - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms)
 
