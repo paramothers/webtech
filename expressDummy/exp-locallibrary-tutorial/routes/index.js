@@ -8,3 +8,4 @@ res.redirect('/catalog');
 });
 
 module.exports = router;
+
