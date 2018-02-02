@@ -1,10 +1,12 @@
 package microservice.book.socialmultiplication.service;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import microservice.book.socialmultiplication.domain.Multiplication;
@@ -13,7 +15,7 @@ import microservice.book.socialmultiplication.domain.Multiplication;
 @SpringBootTest
 public class MulitiplicationServiceTest {
 
-	@MockBean
+	@Mock
 	private RandomGeneratorService randomGeneratorService;
 
 	@Autowired
@@ -29,6 +31,12 @@ public class MulitiplicationServiceTest {
 //		assertThat(multiplication.getFactorA()).isEqualTo(50);
 //		assertThat(multiplication.getFactorB()).isEqualTo(30);
 //		assertThat(multiplication.getResult()).isEqualTo(1500);
+	}
+	
+	@Before
+	public void setup(){
+		
+		MockitoAnnotations.initMocks(this);
 	}
 
 }
