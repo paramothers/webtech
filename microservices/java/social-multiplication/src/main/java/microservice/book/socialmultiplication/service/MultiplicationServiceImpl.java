@@ -11,6 +11,8 @@ import org.springframework.util.Assert;
 import microservice.book.socialmultiplication.domain.Multiplication;
 import microservice.book.socialmultiplication.domain.MultiplicationResultAttempt;
 import microservice.book.socialmultiplication.domain.User;
+import microservice.book.socialmultiplication.event.EventDispatcher;
+import microservice.book.socialmultiplication.event.MultiplicationSolvedEvent;
 import microservice.book.socialmultiplication.repository.MultiplicationResultAttemptRepository;
 import microservice.book.socialmultiplication.repository.UserRepository;
 
@@ -20,13 +22,16 @@ public class MultiplicationServiceImpl implements MulitiplicationService {
 	private RandomGeneratorService randomGeneratorService;
 	private MultiplicationResultAttemptRepository attemptRepository;
 	private UserRepository userRepository;
+	private EventDispatcher eventDispatcher;
 
 	@Autowired
 	public MultiplicationServiceImpl(RandomGeneratorService randomGeneratorService,
-			final MultiplicationResultAttemptRepository attemptRepository, final UserRepository userRepository) {
+			final MultiplicationResultAttemptRepository attemptRepository, final UserRepository userRepository,
+			EventDispatcher eventDispatcher) {
 		this.randomGeneratorService = randomGeneratorService;
 		this.attemptRepository = attemptRepository;
 		this.userRepository = userRepository;
+		this.eventDispatcher = eventDispatcher;
 	}
 
 	@Override
@@ -38,7 +43,7 @@ public class MultiplicationServiceImpl implements MulitiplicationService {
 	}
 
 	public List<MultiplicationResultAttempt> getStatsForUser(String userAlias) {
-		
+
 		return attemptRepository.findTop5ByUserAliasOrderByIdDesc(userAlias);
 	}
 	/*
@@ -65,6 +70,10 @@ public class MultiplicationServiceImpl implements MulitiplicationService {
 				attempt.getMultiplication(), attempt.getResultAttempt(), correct);
 
 		attemptRepository.save(checkedAttempt);
+
+		// Communicates the result via Event
+		eventDispatcher.send(new MultiplicationSolvedEvent(checkedAttempt.getId(), checkedAttempt.getUser().getId(),
+				checkedAttempt.isCorrect()));
 		// Returns the result return correct;
 		return correct;
 	}
