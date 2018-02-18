@@ -92,13 +92,16 @@ public class GameServiceImpl implements GameService {
 
 	private Optional<BadgeCard> checkAndGiveBadgeBasedOnScore(final List<BadgeCard> badgeCards, final Badge badge,
 			final int score, final int scoreThreshold, final Long userId) {
+		
 		if (score >= scoreThreshold && !containsBadge(badgeCards, badge)) {
+			
 			return Optional.of(giveBadgeToUser(badge, userId));
 		}
 		return Optional.empty();
 	}
 
 	private boolean containsBadge(final List<BadgeCard> badgeCards, final Badge badge) {
+		
 		return badgeCards.stream().anyMatch(b -> b.getBadge().equals(badge));
 	}
 
