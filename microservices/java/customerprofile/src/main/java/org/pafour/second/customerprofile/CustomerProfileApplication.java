@@ -2,12 +2,14 @@ package org.pafour.second.customerprofile;
 
 import org.pafour.second.customerprofile.domain.Customer;
 import org.pafour.second.customerprofile.repository.CustomerRepository;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableRabbit
 public class CustomerProfileApplication {
 
 	public static void main(String[] args) {
