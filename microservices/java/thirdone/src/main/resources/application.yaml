@@ -1,0 +1,19 @@
+spring:
+  profiles: production
+server:
+  port: 9090
+  
+---
+
+spring:
+ profiles: development
+server:
+ port: 8080
+ 
+---
+org:
+ pafour: param-padhu-pavalan-parithi  
+security:
+  user:
+    name: guest
+    password: guest123 
