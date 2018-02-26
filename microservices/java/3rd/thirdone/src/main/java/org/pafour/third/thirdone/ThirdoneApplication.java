@@ -35,6 +35,8 @@ public class ThirdoneApplication {
 	//curl -H "Content-Type: application/json" -X POST localhost:8080/register -d '{"name":"param1", "email":"param1@gmail.com"}'
 	//curl localhost:8090/refresh -d {}
 	//curl -H "Content-Type: application/json" -X POST localhost:8082/book/fare -d '{"flightNumber":"BF101", "flightDate":"22-JAN-16"}'
+	//curl -H "Content-Type: application/json" http://localhost:8081/fares/get?flightNumber="BF101"&flightDate="22-JAN-16"
+	//curl -H "Content-Type: application/json" -X GET localhost:8081/fares/get -d '{"flightNumber":"BF101", "flightDate":"22-JAN-16"}'
 	// mvnw dependency:purge-local-repository -DactTransitively=false -DreResolve=false --fail-at-end
 	
 	@Bean
