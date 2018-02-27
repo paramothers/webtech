@@ -7,13 +7,16 @@ import java.util.stream.Collectors;
 import org.pafour.third.thirdfare.component.FareComponent;
 import org.pafour.third.thirdfare.controller.FareController;
 import org.pafour.third.thirdfare.entity.Fare;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
+import org.springframework.context.annotation.Bean;
+
+import org.slf4j.Logger;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -31,6 +34,11 @@ public class ThirdfareApplication implements CommandLineRunner {
 		SpringApplication.run(ThirdfareApplication.class, args);
 	}
 
+	@Bean
+	public AlwaysSampler defaultSampler() {
+		return new AlwaysSampler();
+	}
+
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -43,7 +51,9 @@ public class ThirdfareApplication implements CommandLineRunner {
 
 		List<Fare> fareList = Arrays.stream(fares).collect(Collectors.toList());
 		fareList.forEach(fare -> fareComponent.save(fare));
-		log.info("Result fare:  "+fareComponent.get("BF101","22-JAN-16").getFare());
-		
+		log.info("Result fare:  " + fareComponent.get("BF101", "22-JAN-16").getFare());
+		log.info("Result fare:  " + fareComponent.get("BF101", "22-JAN-16").getFare());
+		log.info("Result fare:  " + fareComponent.get("BF101", "22-JAN-16").getFare());
+
 	}
 }

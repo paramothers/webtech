@@ -27,6 +27,7 @@ public class FareController {
 	@RequestMapping("/get")
 	public Fare getFares(@RequestParam("flightNumber") String flightNumber, @RequestParam("flightDate") String flightDate){
 		
+		log.info("traceid");
 		return fareComponent.get(flightNumber, flightDate);
 	}
 
