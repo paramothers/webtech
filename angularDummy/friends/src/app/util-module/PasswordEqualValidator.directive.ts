@@ -2,6 +2,7 @@ import {Attribute, Directive, forwardRef} from '@angular/core';
 import {AbstractControl, NG_VALIDATORS, Validator} from '@angular/forms';
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[passwordEqual][formControlName],[passwordEqual][formControl],[passwordEqual][ngModel]',
   providers: [
       {provide: NG_VALIDATORS, useExisting: forwardRef(() => PasswordEqualValidatorDirective), multi: true}

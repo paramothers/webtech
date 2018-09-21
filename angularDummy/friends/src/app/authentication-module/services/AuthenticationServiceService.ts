@@ -3,6 +3,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class AuthenticationServiceService {
+    changePassword(newPassword: string): any {
+        throw new Error('Method not implemented.');
+    }
 
   constructor(private angularFireAuth: AngularFireAuth) { }
 
@@ -42,6 +45,14 @@ email: string  :Promise<any>  */
   public signout(): Promise<any> {
 
     return this.angularFireAuth.auth.signOut();
+  }
+
+  /**
+   * changeEmail
+email:string  : Promise<any>  */
+  public changeEmail(email: string): Promise<any> {
+
+    return this.angularFireAuth.auth.currentUser.updateEmail(email);
   }
 
 }

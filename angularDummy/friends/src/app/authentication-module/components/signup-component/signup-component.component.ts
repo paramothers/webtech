@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationServiceService } from '../../services/AuthenticationServiceService';
-import { UserService } from '../../services/user.service';
-import { User } from '../../domains/User';
+import { UserService } from '../../../user-module/services/user.service';
+import { User } from '../../../user-module/domains/User';
 import { NgForm } from '@Angular/forms';
 
 @Component({
@@ -21,7 +21,7 @@ export class SignupComponentComponent implements OnInit {
   signup(signupFormData: NgForm): void {
 
     this.authenticationService.signup(signupFormData.value.email, signupFormData.value.password)
-    
+
     .then(
       (userInfo) => {
         const user: User = new User(signupFormData.value.email,

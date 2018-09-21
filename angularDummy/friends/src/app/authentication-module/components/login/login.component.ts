@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../domains/User';
+import { User } from '../../../user-module/domains/User';
 import { Router } from '@angular/router';
 import { AuthenticationServiceService } from '../../services/AuthenticationServiceService';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../user-module/services/user.service';
 import { NgForm } from '@Angular/forms';
 
 @Component({

@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCeRjajgTSJWoto6q4JeZTodKGl1SRRG4o",
-    authDomain: "friends-4f9ea.firebaseapp.com",
-    databaseURL: "https://friends-4f9ea.firebaseio.com",
-    projectId: "friends-4f9ea",
-    storageBucket: "friends-4f9ea.appspot.com",
-    messagingSenderId: "138250267136"
+    apiKey: 'AIzaSyCeRjajgTSJWoto6q4JeZTodKGl1SRRG4o',
+    authDomain: 'friends-4f9ea.firebaseapp.com',
+    databaseURL: 'https://friends-4f9ea.firebaseio.com',
+    projectId: 'friends-4f9ea',
+    storageBucket: 'friends-4f9ea.appspot.com',
+    messagingSenderId: '138250267136'
   }
-}
+};
 
 /*
  * In development mode, to ignore zone related error stack frames such as

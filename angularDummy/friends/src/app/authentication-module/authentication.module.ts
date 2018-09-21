@@ -4,24 +4,27 @@ import { CommonModule } from '@angular/common';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationServiceService } from './services/AuthenticationServiceService';
 import { SignupComponentComponent } from './components/signup-component/signup-component.component';
-import { UserService } from './services/user.service';
-import { PasswordEqualValidatorDirective } from '../utils/PasswordEqualValidator.directive';
+import { UserService } from '../user-module/services/user.service';
 import { FormsModule } from '@Angular/forms';
-import { ErrorAlertComponent } from '../shared/ErrorAlertComponent/ErrorAlert.component';
 import { LoginComponent } from './components/login/login.component';
+import { PasswordEqualValidatorDirective } from '../util-module/PasswordEqualValidator.directive';
+import { CommonModuleModule } from '../common-module/common-module.module';
+import { UserModuleModule } from '../user-module/user-module.module';
 
 @NgModule({
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    FormsModule 
+    FormsModule,
+    CommonModuleModule,
+    UserModuleModule
   ],
   declarations: [
     SignupComponentComponent,
-    ErrorAlertComponent,
-    PasswordEqualValidatorDirective,
-    LoginComponent
+    LoginComponent,
+    PasswordEqualValidatorDirective
   ],
+  // tslint:disable-next-line:whitespace
   providers:[
     AuthenticationServiceService,
     UserService

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { AuthenticationServiceService } from '../authentication-module/services/AuthenticationServiceService';
+import { AuthenticationServiceService } from '../../authentication-module/services/AuthenticationServiceService';
 
 @Injectable()
 export class GuradConditionService implements CanActivate {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationServiceService } from './authentication-module/services/AuthenticationServiceService';
+import { AuthenticationServiceService } from '../authentication-module/services/AuthenticationServiceService';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private authService: AuthenticationServiceService) {
 
-    authenticationService = authService;
+    this.authenticationService = authService;
 
   }
 }

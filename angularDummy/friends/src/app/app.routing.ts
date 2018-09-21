@@ -1,18 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
-import {NgModule} from '@angular/core'
-import { AboutComponent } from './about/about.component';
+import {NgModule} from '@angular/core';
 
 const routes: Routes = [
-  { path: "app-friends-about", component: AboutComponent, pathMatch: 'full'  },
-  { path: "**", redirectTo: 'app-friends-page-not-found'  }
-]; 
+];
 
 @NgModule ({
 
-  imports:[
+  imports : [
     RouterModule.forRoot(routes)
   ],
-  exports:[
+  exports : [
     RouterModule
   ]
 })
