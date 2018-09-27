@@ -1,0 +1,40 @@
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+      <input type="text" pInputText placeholder="Username">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <h2>Guess the Number !</h2>
+  <div class="card bg-light mb-3">
+      <div class="card-body">
+        <p class="card-text">Guess the computer generated random number between 1 and 1000.</p>
+      </div>
+  </div>
+  <div>
+    <label>Your Guess: </label>
+    <input type="number" [value]="guess" (input)="guess = $event.target.value" /><br>
+    <p-button  (click)="verifyGuess()" label= "Verify" ></p-button> &nbsp;
+    <p-button (click)="initializeGame()" label="Restart"></p-button>
+  </div>
+  <div>
+    <p *ngIf="deviation<0" class="alert alert-warning">Your guess is higher.</p>
+    <p *ngIf="deviation>0" class="alert alert-warning">Your guess is lower.</p>
+    <p *ngIf="deviation===0" class="alert alert-success">Yes! That's it.</p>
+  </div>
+
+  <div>
+    <p *ngIf="deviation<0">Your guess is highter</p>
+    <p *ngIf="deviation > 0 ">Your gess is low</p>
+    <p *ngIf="deviation ==0"> You are correct</p>
+  </div>
+  <p-card title="Title">
+    No of guesses :
+      <span class="badge">{{noOfTries}}</span>
+  </p-card>
+</div>

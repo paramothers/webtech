@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRouting } from './app.routing';
 import { UserModuleModule } from './user-module/user-module.module';
+import { DataListModule } from 'primeng/primeng';
 
 @NgModule({
    declarations: [
@@ -25,7 +26,8 @@ import { UserModuleModule } from './user-module/user-module.module';
       BrowserAnimationsModule,
       AppRouting,
       UserModuleModule,
-      AuthenticationModule
+      AuthenticationModule,
+      DataListModule
   ],
   providers: [
     AngularFireAuth,

@@ -1,0 +1,1420 @@
+[
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [
+      {
+        "name": "AngularFireAuth"
+      },
+      {
+        "name": "AngularFireDatabase"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "ns": "AngularFireModule",
+        "name": "AngularFireModule.initializeApp(args)"
+      },
+      {
+        "name": "BrowserAnimationsModule"
+      },
+      {
+        "name": "AppRouting"
+      },
+      {
+        "name": "UserModuleModule"
+      },
+      {
+        "name": "AuthenticationModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 757,
+        "end": 801,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 757,
+          "end": 773,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 774,
+          "end": 801,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 776,
+              "end": 795,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 802,
+        "end": 1041,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 802,
+          "end": 813,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 814,
+          "end": 1041,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 816,
+              "end": 835,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 836,
+              "end": 856,
+              "flags": 0,
+              "escapedText": "BrowserModule"
+            },
+            {
+              "pos": 857,
+              "end": 875,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 876,
+              "end": 936,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 876,
+                "end": 914,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 876,
+                  "end": 900,
+                  "flags": 0,
+                  "escapedText": "AngularFireModule"
+                },
+                "name": {
+                  "pos": 901,
+                  "end": 914,
+                  "flags": 0,
+                  "escapedText": "initializeApp"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 915,
+                  "end": 935,
+                  "flags": 0,
+                  "kind": 184,
+                  "expression": {
+                    "pos": 915,
+                    "end": 926,
+                    "flags": 0,
+                    "escapedText": "environment"
+                  },
+                  "name": {
+                    "pos": 927,
+                    "end": 935,
+                    "flags": 0,
+                    "escapedText": "firebase"
+                  }
+                }
+              ]
+            },
+            {
+              "pos": 937,
+              "end": 967,
+              "flags": 0,
+              "escapedText": "BrowserAnimationsModule"
+            },
+            {
+              "pos": 968,
+              "end": 985,
+              "flags": 0,
+              "escapedText": "AppRouting"
+            },
+            {
+              "pos": 986,
+              "end": 1009,
+              "flags": 0,
+              "escapedText": "UserModuleModule"
+            },
+            {
+              "pos": 1010,
+              "end": 1037,
+              "flags": 0,
+              "escapedText": "AuthenticationModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1042,
+        "end": 1106,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1042,
+          "end": 1054,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 1055,
+          "end": 1106,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 1057,
+              "end": 1077,
+              "flags": 0,
+              "escapedText": "AngularFireAuth"
+            },
+            {
+              "pos": 1078,
+              "end": 1102,
+              "flags": 0,
+              "escapedText": "AngularFireDatabase"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1107,
+        "end": 1124,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1107,
+          "end": 1117,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 1118,
+          "end": 1124,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": []
+        }
+      },
+      {
+        "pos": 1125,
+        "end": 1153,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1125,
+          "end": 1137,
+          "flags": 0,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 1138,
+          "end": 1153,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 1140,
+              "end": 1152,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppRouting",
+    "file": "src/app/app.routing.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forRoot(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 138,
+        "end": 190,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 138,
+          "end": 149,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 151,
+          "end": 190,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 153,
+              "end": 186,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 153,
+                "end": 178,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 153,
+                  "end": 170,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 171,
+                  "end": 178,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 179,
+                  "end": 185,
+                  "flags": 0,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 191,
+        "end": 226,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 191,
+          "end": 201,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 203,
+          "end": 226,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 205,
+              "end": 222,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AuthenticationRoutingModule",
+    "file": "app/authentication-module/authentication-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 435,
+        "end": 478,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 435,
+          "end": 445,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 446,
+          "end": 478,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 448,
+              "end": 477,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 448,
+                "end": 469,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 448,
+                  "end": 460,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 461,
+                  "end": 469,
+                  "flags": 0,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 470,
+                  "end": 476,
+                  "flags": 0,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 479,
+        "end": 505,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 479,
+          "end": 489,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 490,
+          "end": 505,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 492,
+              "end": 504,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AuthenticationModule",
+    "file": "app/authentication-module/authentication.module.ts",
+    "providers": [
+      {
+        "name": "AuthenticationServiceService"
+      },
+      {
+        "name": "UserService"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "SignupComponentComponent"
+      },
+      {
+        "name": "LoginComponent"
+      },
+      {
+        "name": "PasswordEqualValidatorDirective"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "AuthenticationRoutingModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "CommonModuleModule"
+      },
+      {
+        "name": "UserModuleModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 799,
+        "end": 929,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 799,
+          "end": 809,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 810,
+          "end": 929,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 812,
+              "end": 829,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 830,
+              "end": 862,
+              "flags": 0,
+              "escapedText": "AuthenticationRoutingModule"
+            },
+            {
+              "pos": 863,
+              "end": 879,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 880,
+              "end": 903,
+              "flags": 0,
+              "escapedText": "CommonModuleModule"
+            },
+            {
+              "pos": 904,
+              "end": 925,
+              "flags": 0,
+              "escapedText": "UserModuleModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 930,
+        "end": 1038,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 930,
+          "end": 945,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 946,
+          "end": 1038,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 948,
+              "end": 977,
+              "flags": 0,
+              "escapedText": "SignupComponentComponent"
+            },
+            {
+              "pos": 978,
+              "end": 997,
+              "flags": 0,
+              "escapedText": "LoginComponent"
+            },
+            {
+              "pos": 998,
+              "end": 1034,
+              "flags": 0,
+              "escapedText": "PasswordEqualValidatorDirective"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1039,
+        "end": 1148,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1039,
+          "end": 1092,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 1093,
+          "end": 1148,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 1094,
+              "end": 1127,
+              "flags": 0,
+              "escapedText": "AuthenticationServiceService"
+            },
+            {
+              "pos": 1128,
+              "end": 1144,
+              "flags": 0,
+              "escapedText": "UserService"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "CommonModuleRoutingModule",
+    "file": "app/common-module/common-module-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 348,
+        "end": 391,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 348,
+          "end": 358,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 359,
+          "end": 391,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 361,
+              "end": 390,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 361,
+                "end": 382,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 361,
+                  "end": 373,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 374,
+                  "end": 382,
+                  "flags": 0,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 383,
+                  "end": 389,
+                  "flags": 0,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 392,
+        "end": 418,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 392,
+          "end": 402,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 403,
+          "end": 418,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 405,
+              "end": 417,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "CommonModuleModule",
+    "file": "app/common-module/common-module.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "AboutComponent"
+      },
+      {
+        "name": "PageNotFoundComponent"
+      },
+      {
+        "name": "ErrorAlertComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "CommonModuleRoutingModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "ErrorAlertComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 435,
+        "end": 500,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 435,
+          "end": 445,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 446,
+          "end": 500,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 448,
+              "end": 465,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 466,
+              "end": 496,
+              "flags": 0,
+              "escapedText": "CommonModuleRoutingModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 501,
+        "end": 594,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 501,
+          "end": 516,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 517,
+          "end": 594,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 519,
+              "end": 538,
+              "flags": 0,
+              "escapedText": "AboutComponent"
+            },
+            {
+              "pos": 539,
+              "end": 565,
+              "flags": 0,
+              "escapedText": "PageNotFoundComponent"
+            },
+            {
+              "pos": 566,
+              "end": 590,
+              "flags": 0,
+              "escapedText": "ErrorAlertComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 595,
+        "end": 636,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 595,
+          "end": 605,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 606,
+          "end": 636,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 608,
+              "end": 632,
+              "flags": 0,
+              "escapedText": "ErrorAlertComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserModuleModule",
+    "file": "app/user-module/user-module.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "UserProfileComponent",
+        "file": "components/user-profile/user-profile.component.ts",
+        "selector": "app-friends-userprofile",
+        "providers": [],
+        "templateUrl": [
+          "user-profile.component.html"
+        ],
+        "styleUrls": [
+          "user-profile.component.sass"
+        ],
+        "__raw": [
+          {
+            "pos": 463,
+            "end": 503,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 463,
+              "end": 476,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 477,
+              "end": 503,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-friends-userprofile"
+            }
+          },
+          {
+            "pos": 504,
+            "end": 551,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 504,
+              "end": 518,
+              "flags": 0,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 519,
+              "end": 551,
+              "flags": 0,
+              "kind": 182,
+              "elements": [
+                {
+                  "pos": 521,
+                  "end": 550,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "user-profile.component.sass"
+                }
+              ]
+            }
+          },
+          {
+            "pos": 552,
+            "end": 599,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 552,
+              "end": 568,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 569,
+              "end": 599,
+              "flags": 0,
+              "kind": 9,
+              "text": "user-profile.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "EditDialogComponent",
+        "file": "components/edit-dialog/edit-dialog.component.ts",
+        "selector": "app-edit-dialog",
+        "providers": [],
+        "templateUrl": [
+          "edit-dialog.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 283,
+            "end": 315,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 283,
+              "end": 296,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 297,
+              "end": 315,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-edit-dialog"
+            }
+          },
+          {
+            "pos": 316,
+            "end": 364,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 316,
+              "end": 332,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 333,
+              "end": 364,
+              "flags": 0,
+              "kind": 9,
+              "text": "./edit-dialog.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "UserFriendsComponent",
+        "file": "components/user-friends/user-friends.component.ts",
+        "selector": "app-friends-userfriends",
+        "providers": [],
+        "templateUrl": [
+          "user-friends.component.html"
+        ],
+        "styleUrls": [
+          "user-friends.component.sass"
+        ],
+        "__raw": [
+          {
+            "pos": 286,
+            "end": 324,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 286,
+              "end": 297,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 298,
+              "end": 324,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-friends-userfriends"
+            }
+          },
+          {
+            "pos": 325,
+            "end": 370,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 325,
+              "end": 337,
+              "flags": 0,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 338,
+              "end": 370,
+              "flags": 0,
+              "kind": 182,
+              "elements": [
+                {
+                  "pos": 340,
+                  "end": 369,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "user-friends.component.sass"
+                }
+              ]
+            }
+          },
+          {
+            "pos": 371,
+            "end": 416,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 371,
+              "end": 385,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 386,
+              "end": 416,
+              "flags": 0,
+              "kind": 9,
+              "text": "user-friends.component.html"
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "UserRoutingModule"
+      },
+      {
+        "name": "UtilModuleModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 539,
+        "end": 635,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 539,
+          "end": 549,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 550,
+          "end": 635,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 552,
+              "end": 569,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 570,
+              "end": 586,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 587,
+              "end": 609,
+              "flags": 0,
+              "escapedText": "UserRoutingModule"
+            },
+            {
+              "pos": 610,
+              "end": 631,
+              "flags": 0,
+              "escapedText": "UtilModuleModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 636,
+        "end": 734,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 636,
+          "end": 651,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 652,
+          "end": 734,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 654,
+              "end": 679,
+              "flags": 0,
+              "escapedText": "UserProfileComponent"
+            },
+            {
+              "pos": 680,
+              "end": 704,
+              "flags": 0,
+              "escapedText": "EditDialogComponent"
+            },
+            {
+              "pos": 705,
+              "end": 730,
+              "flags": 0,
+              "escapedText": "UserFriendsComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "UserRoutingModule",
+    "file": "app/user-module/user-route-module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 381,
+        "end": 443,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 381,
+          "end": 394,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 395,
+          "end": 443,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 397,
+              "end": 436,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 397,
+                "end": 428,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 397,
+                  "end": 419,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 420,
+                  "end": 428,
+                  "flags": 0,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 429,
+                  "end": 435,
+                  "flags": 0,
+                  "escapedText": "ROUTES"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 444,
+        "end": 489,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 444,
+          "end": 457,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 458,
+          "end": 489,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 460,
+              "end": 482,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 490,
+        "end": 515,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 490,
+          "end": 505,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 506,
+          "end": 515,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "UtilModuleModule",
+    "file": "app/util-module/util-module.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "FirstpipePipe"
+      },
+      {
+        "name": "FriendsDatePipePipe"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "FirstpipePipe"
+      },
+      {
+        "name": "FriendsDatePipePipe"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 226,
+        "end": 260,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 226,
+          "end": 236,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 237,
+          "end": 260,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 239,
+              "end": 256,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 261,
+        "end": 326,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 261,
+          "end": 276,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 277,
+          "end": 326,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 279,
+              "end": 297,
+              "flags": 0,
+              "escapedText": "FirstpipePipe"
+            },
+            {
+              "pos": 298,
+              "end": 322,
+              "flags": 0,
+              "escapedText": "FriendsDatePipePipe"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 327,
+        "end": 387,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 327,
+          "end": 337,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 338,
+          "end": 387,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 340,
+              "end": 358,
+              "flags": 0,
+              "escapedText": "FirstpipePipe"
+            },
+            {
+              "pos": 359,
+              "end": 383,
+              "flags": 0,
+              "escapedText": "FriendsDatePipePipe"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

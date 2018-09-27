@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": "angularDummy\\friends"
+		},
+		{
+			"path": "angularDummy\\guess-number"
+		},
+		{
+			"path": "angularDummy\\exercise"
 		}
 	],
 	"settings": {}

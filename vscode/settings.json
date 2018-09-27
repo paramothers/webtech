@@ -1,0 +1,32 @@
+{
+    "git.ignoreMissingGitWarning": true,
+    "java.import.maven.enabled": false,
+    "java.home": "C:/Program Files/Java/jdk1.8.0_121",
+    "workbench.colorTheme": "Default Light+",
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "files.exclude":{
+        "**/test/": true,
+        "**/.gradle": true,
+        "**/.settings": true,
+        "**/gradle": true,
+        "**/bin": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/gradlew.bat": true,
+        "**/.gitignore": true,
+        "**/.vscode": true,
+        "**/build": true,
+        "**/*.spec.ts": true,
+        "**/e2e": true,
+        "**/node_modules": true,
+
+    },
+    "files.readOnly": {       
+        "**/*.ts":true //Folder
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 1,
+    "html.format.wrapAttributes": "force"
+}

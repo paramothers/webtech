@@ -1,0 +1,299 @@
+[
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [
+          "app.component.html"
+        ],
+        "styleUrls": [
+          "app.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 56,
+            "end": 79,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 56,
+              "end": 67,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 68,
+              "end": 79,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-root"
+            }
+          },
+          {
+            "pos": 80,
+            "end": 118,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 80,
+              "end": 94,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 95,
+              "end": 118,
+              "flags": 0,
+              "kind": 9,
+              "text": "./app.component.html"
+            }
+          },
+          {
+            "pos": 119,
+            "end": 156,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 119,
+              "end": 131,
+              "flags": 0,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 132,
+              "end": 156,
+              "flags": 0,
+              "kind": 182,
+              "elements": [
+                {
+                  "pos": 134,
+                  "end": 155,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "./app.component.css"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ParamStudyComponent"
+      },
+      {
+        "name": "ParamStudy2Component"
+      },
+      {
+        "name": "ParamStudy3Component"
+      },
+      {
+        "name": "ParamStudy4Component"
+      },
+      {
+        "name": "ParamStudy5Component"
+      },
+      {
+        "name": "ParamStudy6Component"
+      },
+      {
+        "name": "ConvertAgePipe"
+      },
+      {
+        "name": "ConvertAge2Pipe"
+      },
+      {
+        "name": "ConvertAge32Pipe"
+      },
+      {
+        "name": "ConvertAgse32Pipe"
+      },
+      {
+        "name": "Convert34agse32Pipe"
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 888,
+        "end": 1193,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 888,
+          "end": 903,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 904,
+          "end": 1193,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 906,
+              "end": 923,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            },
+            {
+              "pos": 924,
+              "end": 948,
+              "flags": 0,
+              "escapedText": "ParamStudyComponent"
+            },
+            {
+              "pos": 949,
+              "end": 974,
+              "flags": 0,
+              "escapedText": "ParamStudy2Component"
+            },
+            {
+              "pos": 975,
+              "end": 1000,
+              "flags": 0,
+              "escapedText": "ParamStudy3Component"
+            },
+            {
+              "pos": 1001,
+              "end": 1026,
+              "flags": 0,
+              "escapedText": "ParamStudy4Component"
+            },
+            {
+              "pos": 1027,
+              "end": 1052,
+              "flags": 0,
+              "escapedText": "ParamStudy5Component"
+            },
+            {
+              "pos": 1053,
+              "end": 1078,
+              "flags": 0,
+              "escapedText": "ParamStudy6Component"
+            },
+            {
+              "pos": 1079,
+              "end": 1098,
+              "flags": 0,
+              "escapedText": "ConvertAgePipe"
+            },
+            {
+              "pos": 1099,
+              "end": 1119,
+              "flags": 0,
+              "escapedText": "ConvertAge2Pipe"
+            },
+            {
+              "pos": 1120,
+              "end": 1141,
+              "flags": 0,
+              "escapedText": "ConvertAge32Pipe"
+            },
+            {
+              "pos": 1142,
+              "end": 1164,
+              "flags": 0,
+              "escapedText": "ConvertAgse32Pipe"
+            },
+            {
+              "pos": 1165,
+              "end": 1189,
+              "flags": 0,
+              "escapedText": "Convert34agse32Pipe"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1194,
+        "end": 1229,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1194,
+          "end": 1204,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 1205,
+          "end": 1229,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 1207,
+              "end": 1225,
+              "flags": 0,
+              "escapedText": "BrowserModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 1230,
+        "end": 1246,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1230,
+          "end": 1242,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 1243,
+          "end": 1246,
+          "flags": 0,
+          "kind": 182,
+          "elements": []
+        }
+      },
+      {
+        "pos": 1247,
+        "end": 1275,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 1247,
+          "end": 1259,
+          "flags": 0,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 1260,
+          "end": 1275,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 1262,
+              "end": 1274,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
