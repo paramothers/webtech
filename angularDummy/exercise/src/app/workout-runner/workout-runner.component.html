@@ -1,6 +1,13 @@
 <div class="row pt-4">
+
+  <div id="description-panel"
+    class="col-sm-3">
+    <app-execrcise-description [description]="currentExercise.exercise.description"
+      [steps]="currentExercise.exercise.procedure"></app-execrcise-description>
+  </div>
+
   <div id="exercise-pane"
-    class="col-sm">
+    class="col-sm-6">
     <h1 class="text-center">{{currentExercise.exercise.title}}</h1>
     <div class="image-container row">
       <img class="img-fluid col-sm"
@@ -17,4 +24,7 @@
     </div>
     <h1>Time Remaining: {{currentExercise.duration-exerciseRunningDuration}}</h1>
   </div>
-</div>
+  <div id="video-panel"
+    class="col-sm-3">
+    <app-video-player [videos]="currentExercise.exercise.videos" ></app-video-player>
+  </div>
