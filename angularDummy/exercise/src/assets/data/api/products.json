@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+            "id": 1,
+            "city": "bsl",
+            "name": "iPhone",
+            "cat": 1,
+            "price": 80000.5
+    },
+    {
+            "id": 2,
+            "city": null,
+            "name": "macbook pro",
+            "cat": 1,
+            "price": 150000
+    },
+    {
+            "id": 3,
+            "city": "dhk",
+            "name": "Redmi 3S Prime",
+            "cat": 2,
+            "price": 12000
+    },
+    {
+            "id": 4,
+            "city": "bsl",
+            "name": "macbook air",
+            "cat": 2,
+            "price": 110000
+    }
+  ]
+}

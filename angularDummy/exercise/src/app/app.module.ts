@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule  } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { WorkoutRunnerModule } from './workout-runner/workout-runner.module';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { WorkoutRunnerModule } from './workout-runner/workout-runner.module';
   ],
   imports: [
     BrowserModule,
-    WorkoutRunnerModule
+    WorkoutRunnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

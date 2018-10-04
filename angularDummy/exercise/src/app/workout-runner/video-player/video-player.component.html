@@ -1,7 +1,8 @@
 <div class="card">
   <h4 class="card-header">Videos</h4>
   <div class="card-body">
-    <div *ngFor="let video of safeVideoUrls">
+    <div *ngFor="let video of safeVideoUrls; let i = index">
+      <span>{{i}}</span>
       <iframe width="198"
         height="132"
         [src]="video"

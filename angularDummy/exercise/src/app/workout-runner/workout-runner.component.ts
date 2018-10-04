@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductServiceService } from '../product-service.service.ts';
 
-import { Exercise, ExercisePlan, WorkoutPlan } from '../domain/model';
+
+import { Exercise, ExercisePlan, WorkoutPlan, Product } from '../domain/model';
 
 @Component({
   selector: 'app-workout-runner',
@@ -16,7 +18,7 @@ export class WorkoutRunnerComponent implements OnInit {
   currentExercise: ExercisePlan;
   exerciseRunningDuration: number;
 
-  constructor() { }
+  constructor(private productServiceService : ProductServiceService) { }
 
   ngOnInit() {
 
@@ -24,8 +26,17 @@ export class WorkoutRunnerComponent implements OnInit {
     this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'),
       this.workoutPlan.restBetweenExercise);
     this.start();
+    this.jsonParse();
+
   }
 
+  private jsonParse(): void {
+
+   this.productServiceService.getProductData();
+
+      
+
+  }
   start(): void {
 
     this.workoutTimeRemaing = this.workoutPlan.totalWorkoutDuration();

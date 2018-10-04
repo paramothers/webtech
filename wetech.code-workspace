@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "angularDummy\\exercise"
+		},
+		{
+			"path": "nodejsDummy\\jsonqStudy"
 		}
 	],
 	"settings": {}
