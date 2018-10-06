@@ -192,9 +192,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
-
+import { HttpClientModule  } from &#x27;@angular/common/http&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
 import { WorkoutRunnerModule } from &#x27;./workout-runner/workout-runner.module&#x27;;
+
 
 @NgModule({
   declarations: [
@@ -202,7 +203,8 @@ import { WorkoutRunnerModule } from &#x27;./workout-runner/workout-runner.module
   ],
   imports: [
     BrowserModule,
-    WorkoutRunnerModule
+    WorkoutRunnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

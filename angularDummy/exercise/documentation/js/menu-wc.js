@@ -57,13 +57,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-eaa7581a1b2346abe750e1f26ea4b8f7"' : 'data-target="#xs-components-links-module-AppModule-eaa7581a1b2346abe750e1f26ea4b8f7"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-633a67addc9b2c84395c771b829533bd"' : 'data-target="#xs-components-links-module-AppModule-633a67addc9b2c84395c771b829533bd"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-AppModule-eaa7581a1b2346abe750e1f26ea4b8f7"' : 'id="xs-components-links-module-AppModule-eaa7581a1b2346abe750e1f26ea4b8f7"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-AppModule-633a67addc9b2c84395c771b829533bd"' : 'id="xs-components-links-module-AppModule-633a67addc9b2c84395c771b829533bd"' }>
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
                                         </li>
@@ -74,15 +74,49 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/WorkoutRunnerModule.html" data-type="entity-link">WorkoutRunnerModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-WorkoutRunnerModule-fff580c6730b8c9a5a7933ae12460ae8"' : 'data-target="#xs-components-links-module-WorkoutRunnerModule-fff580c6730b8c9a5a7933ae12460ae8"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' : 'data-target="#xs-components-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-WorkoutRunnerModule-fff580c6730b8c9a5a7933ae12460ae8"' : 'id="xs-components-links-module-WorkoutRunnerModule-fff580c6730b8c9a5a7933ae12460ae8"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' : 'id="xs-components-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' }>
+                                        <li class="link">
+                                            <a href="components/ExecrciseDescriptionComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ExecrciseDescriptionComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/VideoPlayerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">VideoPlayerComponent</a>
+                                        </li>
                                         <li class="link">
                                             <a href="components/WorkoutRunnerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">WorkoutRunnerComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                    ${ isNormalMode ? 'data-target="#injectables-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' : 'data-target="#xs-injectables-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' }>
+                                    <span class="icon ion-md-arrow-round-down"></span>
+                                    <span>Injectables</span>
+                                    <span class="icon ion-ios-arrow-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                    ${ isNormalMode ? 'id="injectables-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' : 'id="xs-injectables-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' }>
+                                        <li class="link">
+                                            <a href="injectables/ProductServiceService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>ProductServiceService</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                    ${ isNormalMode ? 'data-target="#pipes-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' : 'data-target="#xs-pipes-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' }>
+                                    <span class="icon ion-md-add"></span>
+                                    <span>Pipes</span>
+                                    <span class="icon ion-ios-arrow-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                    ${ isNormalMode ? 'id="pipes-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' : 'id="xs-pipes-links-module-WorkoutRunnerModule-1f7201ae6e58aa943519fede383c40cc"' }>
+                                        <li class="link">
+                                            <a href="pipes/SecondToPipePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">SecondToPipePipe</a>
                                         </li>
                                 </ul>
                             </li>
@@ -105,10 +139,27 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="classes/ExercisePlan.html" data-type="entity-link">ExercisePlan</a>
                     </li>
                     <li class="link">
+                        <a href="classes/Product.html" data-type="entity-link">Product</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/WorkoutPlan.html" data-type="entity-link">WorkoutPlan</a>
                     </li>
             </ul>
         </li>
+                <li class="chapter">
+                    <div class="simple menu-toggler" data-toggle="collapse"
+                        ${ isNormalMode ? 'data-target="#injectables-links"' : 'data-target="#xs-injectables-links"' }>
+                        <span class="icon ion-md-arrow-round-down"></span>
+                        <span>Injectables</span>
+                        <span class="icon ion-ios-arrow-down"></span>
+                    </div>
+                    <ul class="links collapse"
+                    ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                            <li class="link">
+                                <a href="injectables/ProductServiceService.html" data-type="entity-link">ProductServiceService</a>
+                            </li>
+                    </ul>
+                </li>
         <li class="chapter">
             <div class="simple menu-toggler" data-toggle="collapse"
             ${ isNormalMode ? 'data-target="#miscellaneous-links"' : 'data-target="#xs-miscellaneous-links"' }>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductServiceService } from '../product-service.service.ts';
+import { ProductServiceService } from '../product-service.service';
 
 
 import { Exercise, ExercisePlan, WorkoutPlan, Product } from '../domain/model';
 
 @Component({
   selector: 'app-workout-runner',
-   templateUrl: './workout-runner.component.html',
+  templateUrl: './workout-runner.component.html',
   styles: []
 })
 export class WorkoutRunnerComponent implements OnInit {
@@ -17,55 +17,98 @@ export class WorkoutRunnerComponent implements OnInit {
   currentExerciseIndex: number;
   currentExercise: ExercisePlan;
   exerciseRunningDuration: number;
+  exerciseTimer: number;
+  truncateAt = 4;
+  workoutPaused: boolean;
 
-  constructor(private productServiceService : ProductServiceService) { }
+  constructor(private productServiceService: ProductServiceService) { }
 
   ngOnInit() {
 
+    // first build a workout, which is  set of exercise plan
     this.workoutPlan = this.buildWorkout();
-    this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'),
-      this.workoutPlan.restBetweenExercise);
-    this.start();
-    this.jsonParse();
+    // build the rest phase
+    this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
 
+    this.startWorkout();
+    // this.jsonParse();
+
+  }
+
+  private pause(): void {
+
+    clearInterval(this.exerciseTimer);
+    this.workoutPaused = true;
+  }
+
+  private resume(): void {
+    this.startExerciseTimer();
+    this.workoutPaused = false;
+  }
+
+  public pauseResumeToggle(): void {
+
+    if (this.workoutPaused) {
+      this.resume();
+    } else {
+      this.resume();
+    }
+  }
+  public onKeyPressed(event: KeyboardEvent): void {
+
+    if (event.which === 80 || event.which === 112) {
+      this.pauseResumeToggle();
+    }
   }
 
   private jsonParse(): void {
 
-   this.productServiceService.getProductData();
-
-      
-
+    this.productServiceService.getProductData();
   }
-  start(): void {
+  startWorkout(): void {
 
     this.workoutTimeRemaing = this.workoutPlan.totalWorkoutDuration();
+    // start from first exercise
     this.currentExerciseIndex = 0;
-    this.startExercise(this.workoutPlan.exercises[this.currentExerciseIndex]);
+    this.startExercisePlan(this.workoutPlan.exercises[this.currentExerciseIndex]);
 
   }
-  startExercise(exercisePlan: ExercisePlan): void {
+  // it will start a given exercise plan...
+  startExercisePlan(exercisePlan: ExercisePlan): void {
 
+    // this statment will re-display the page content.
     this.currentExercise = exercisePlan;
+    // reset the current execise duration.
     this.exerciseRunningDuration = 0;
-    const intervalId = setInterval(() => {
+    this.startExerciseTimer();
+  }
+
+
+
+  startExerciseTimer(): void {
+    this.exerciseTimer = window.setInterval(() => {
+
+      // when the a exercise plan duration completed, move to next exercise plan.
       if (this.exerciseRunningDuration >= this.currentExercise.duration) {
 
-        clearInterval(intervalId);
+        clearInterval(this.exerciseTimer);
         const next: ExercisePlan = this.getNextExercise();
         if (next) {
           if (next !== this.restExercise) {
 
             this.currentExerciseIndex++;
           }
-          this.startExercise(next);
+          this.startExercisePlan(next);
         }
       } else {
+        // these variable change reflected in screen.
         this.exerciseRunningDuration++;
+        --this.workoutTimeRemaing;
       }
     }, 1000);
 
   }
+  // this method return exerciseplan or rest exerciseplan alternatively
   getNextExercise(): ExercisePlan {
 
     let nextExercise: ExercisePlan = null;
@@ -93,8 +136,8 @@ export class WorkoutRunnerComponent implements OnInit {
           'A jumping jack or star jump, also called side-straddle hop is a physical jumping exercise.',
           'JumpingJacks.png',
           'jumpingjacks.wav',
-          `Assume an erect position, with feet together and arms at your side.
-                            Slightly bend your knees, and propel yourself a few inches into the air.
+          `Assume an erect position, with feet together and arms at your side.<br/>
+                            Slightly bend your knees, and propel yourself a few inches into the air. <br/>
                             While in air, bring your legs out to the side about shoulder width or slightly wider.
                             As you are moving your legs outward, you should raise your arms up over your head; arms should be
                             slightly bent throughout the entire in-air movement.
