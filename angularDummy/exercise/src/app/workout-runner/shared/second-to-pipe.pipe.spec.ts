@@ -1,11 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
 import { SecondToPipePipe } from './second-to-pipe.pipe';
 
 describe('Pipe: SecondToPipee', () => {
-  it('create an instance', () => {
-    let pipe = new SecondToPipePipe();
-    expect(pipe).toBeTruthy();
+
+  let secondToTimePipe: SecondToPipePipe = null;
+
+  beforeEach(() => {
+    secondToTimePipe = new SecondToPipePipe();
+  });
+  it('should convert integer to time', () => {
+
+    // expect(secondToTimePipe).toBeTruthy();
+    expect(secondToTimePipe.transform(5)).toEqual('00:00:05');
+    expect(secondToTimePipe.transform(65)).toEqual('00:01:05');
   });
 });

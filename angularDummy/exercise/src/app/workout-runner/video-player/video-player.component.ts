@@ -27,4 +27,9 @@ export class VideoPlayerComponent implements OnInit, OnChanges {
       : this.videos;
   }
 
+  playVideo(videoId: string) {
+
+    // this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
+  }
+
 }
