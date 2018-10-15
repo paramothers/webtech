@@ -34,6 +34,22 @@ export class Exercise {
     public videos?: Array<string>) { }
 }
 
+
+export class ExerciseProgressEvent {
+  constructor(
+    public exercise: ExercisePlan,
+    public runningFor: number,
+    public timeRemaining: number,
+    public workoutTimeRemaining: number) { }
+}
+
+export class ExerciseChangedEvent {
+  constructor(
+    public current: ExercisePlan,
+    public next: ExercisePlan
+  ) { }
+}
+
 export class Product {
   constructor(public id: number,
     public city: string,

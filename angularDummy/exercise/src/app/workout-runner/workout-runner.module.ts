@@ -5,6 +5,8 @@ import { ExecrciseDescriptionComponent } from './execrcise-description/execrcise
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { ProductServiceService } from '../product-service.service';
 import { SecondToPipePipe } from './shared/second-to-pipe.pipe';
+import { VideoDialogComponent } from './video-player/video-dialog/video-dialog.component';
+import { WorkoutAudioComponent } from './workout-audio/workout-audio.component';
 
 @NgModule({
   imports: [
@@ -14,11 +16,15 @@ import { SecondToPipePipe } from './shared/second-to-pipe.pipe';
     WorkoutRunnerComponent,
     ExecrciseDescriptionComponent,
     VideoPlayerComponent,
-    SecondToPipePipe
+    SecondToPipePipe,
+    VideoDialogComponent,
+    WorkoutAudioComponent
   ],
   exports: [
-    WorkoutRunnerComponent
+    WorkoutRunnerComponent,
+    VideoDialogComponent
   ],
   providers: [ProductServiceService],
+  entryComponents: [VideoDialogComponent]
 })
 export class WorkoutRunnerModule { }
