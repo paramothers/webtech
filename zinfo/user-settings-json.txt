@@ -1,0 +1,44 @@
+{
+    "git.ignoreMissingGitWarning": true,
+    "java.import.maven.enabled": false,
+    "java.home": "C:/Program Files/Java/jdk1.8.0_121",
+    "workbench.colorTheme": "Monokai",
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.gitignore": true,
+        "**/.gradle": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.vscode": true,
+        "**/*.css": true,
+        "**/*tslint.json": true,
+        "**/bin": true,
+        "**/build": true,
+        "**/e2e": true,
+        "**/gradle": true,
+        "**/gradlew.bat": true,
+        "**/main.ts": true,
+        "**/node_modules": true,
+        "**/README.md": true,
+        "**/test/": true
+    },
+    "files.readOnly": {       
+        "**/*.ts":true //Folder
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 1,
+    "html.format.wrapAttributes": "force",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorCustomizations": {
+        "list.hoverBackground": "#41a6d9",
+        
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.color": "#90a4a3",
+    "material-icon-theme.folders.theme": "classic",
+    "git.enableSmartCommit": true
+}
