@@ -25,8 +25,10 @@ export class WorkoutPlan {
     if (!this.exercises) {
       return;
     }
-    const total = this.exercises.map((e) => e.duration).reduce((previous, current) => parseInt(previous, 10) + parseInt(current, 10));
+    const total = this.exercises.map((e) => e.duration1).reduce(
+      (previous, current) => previous + current);
 
+      console.log('total time ', total);
     return (this.restBetween ? this.restBetween : 0) * this.exercises.length - 1 + total;
   }
 }
@@ -34,6 +36,6 @@ export class WorkoutPlan {
 export class ExercisePlan {
   constructor(
     public exercise: Exercise,
-    public duration: any
+    public duration1: number
   ) { }
 }

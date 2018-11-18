@@ -13,9 +13,9 @@ export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
   restExercisePlan: ExercisePlan;
   workoutTimeRemaining: number;
-  currentExercise: Exercise;
   currentExercisePlan: ExercisePlan;
   currentExercisePlanIndex = 0;
+  currentExerciseRunningDuration = 0;
 
 
   constructor(private workoutServiceService: WorkoutServiceService) { }
@@ -28,37 +28,40 @@ export class WorkoutRunnerComponent implements OnInit {
   }
 
   // start the workoutPlan
-  private start(): any {
+  private start(): void {
 
     this.workoutTimeRemaining = this.workoutPlan.totalWorkoutDuration();
-    this.startExercise(this.workoutPlan[this.currentExercisePlanIndex]);
+    this.startExercise(this.workoutPlan.exercises[this.currentExercisePlanIndex]);
   }
 
   // start the given ExercisePlan
   private startExercise(currentExercisePlan: ExercisePlan): void {
 
     this.currentExercisePlan = currentExercisePlan;
+    this.currentExerciseRunningDuration = 0;
     this.startTrackingCurrentExercise();
   }
 
   private startTrackingCurrentExercise(): void {
 
-    let currentExerciseRunningDuration = 0;
 
+    console.log('exercise Plan ', this.currentExercisePlan);
     const exerciseTimeTracker = window.setInterval(() => {
 
-      if (currentExerciseRunningDuration >= this.currentExercisePlan.duration) {
+      if (this.currentExerciseRunningDuration >= this.currentExercisePlan.duration1) {
 
         window.clearInterval(exerciseTimeTracker);
         const nextExercisePlan = this.getNextExercisePlan();
-        if (nextExercisePlan !== this.restExercisePlan) {
+        if (nextExercisePlan) {
+          if (nextExercisePlan !== this.restExercisePlan) {
 
-          this.currentExercisePlanIndex++;
+            this.currentExercisePlanIndex++;
+          }
+          this.startExercise(nextExercisePlan);
         }
-        this.startExercise(this.workoutPlan[this.currentExercisePlanIndex]);
         return;
       }
-      currentExerciseRunningDuration++;
+      this.currentExerciseRunningDuration++;
       --this.workoutTimeRemaining;
     }, 1000);
   }
@@ -69,7 +72,7 @@ export class WorkoutRunnerComponent implements OnInit {
 
     if (this.currentExercisePlan === this.restExercisePlan) {
 
-      nextExercise = this.workoutPlan[this.currentExercisePlanIndex + 1];
+      nextExercise = this.workoutPlan.exercises[this.currentExercisePlanIndex + 1];
     } else if (this.currentExercisePlanIndex < this.workoutPlan.exercises.length - 1) {
 
       nextExercise = this.restExercisePlan;

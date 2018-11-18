@@ -1,3 +1,42 @@
-<p>
-  workout-runner works!
-</p>
+<div class="row pt-4">
+  <div class="col-sm-3">
+    <p>this is left column</p>
+  </div>
+  <div class="col-sm-6"
+    id="exercise-pane">
+
+    <!--display workout time remaining -->
+    <h4 class="text-center">Workout Remaining - {{workoutTimeRemaining}}</h4>
+
+    <!--disply current exercise name-->
+    <h1 class="text-center">{{currentExercisePlan.exercise.title}}</h1>
+
+
+    <!-- display current exercise image -->
+    <div class="image-container row">
+      <img class="img-fluid col-sm"
+        [src]="'/assets/images/'+currentExercisePlan.exercise.image" />
+    </div>
+
+    <!-- display current exercise progress bar div-->
+    <div class="progress time-progress row">
+      <div class="progress-bar"
+        role="progressbar"
+        [attr.area-valuenow]="currentExerciseRunningDuration"
+        [attr.area-valuemax]="currentExercisePlan.duration1"
+        [ngStyle]="{'width':(currentExerciseRunningDuration/currentExercisePlan.duration1) * 100 +'%'}"
+        area-valuemin="0">
+      </div>
+    </div>
+
+    <!-- display remaining seconds of current exercise -->
+    <div class="row">
+        <h4 class="col-sm-6 text-left">Time Remaining:</h4>
+        <strong>{{currentExercisePlan.duration1 - currentExerciseRunningDuration}}</strong>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <p>this is right most column</p>
+  </div>
+</div>
+

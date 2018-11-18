@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { WorkoutRunnerModule } from './workout-runner/workout-runner.module';
+
+export const REST_IN_BETWEEN_EXERCISE_TIME = new InjectionToken<number>('10');
 
 @NgModule({
   declarations: [
