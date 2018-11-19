@@ -1,7 +1,9 @@
 <div class="row pt-4">
-  <div class="col-sm-3">
-    <p>this is left column</p>
+
+  <div class="col-sm-3" id="description-panel">
+    <abe-exercise-description [description]="currentExercisePlan.exercise.description" [steps]="currentExercisePlan.exercise.procedure"></abe-exercise-description>
   </div>
+
   <div class="col-sm-6"
     id="exercise-pane">
 
@@ -22,10 +24,10 @@
     <div class="progress time-progress row">
       <div class="progress-bar"
         role="progressbar"
-        [attr.area-valuenow]="currentExerciseRunningDuration"
-        [attr.area-valuemax]="currentExercisePlan.duration1"
-        [ngStyle]="{'width':(currentExerciseRunningDuration/currentExercisePlan.duration1) * 100 +'%'}"
-        area-valuemin="0">
+        [attr.aria-valuenow]="currentExerciseRunningDuration"
+        [attr.aria-valuemax]="currentExercisePlan.duration1"
+        [ngStyle]="getProgressStyle()"
+        aria-valuemin="0">
       </div>
     </div>
 

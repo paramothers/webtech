@@ -81,4 +81,9 @@ export class WorkoutRunnerComponent implements OnInit {
     return nextExercise;
   }
 
+  private getProgressStyle(): any {
+
+    return { 'width': (this.currentExerciseRunningDuration / this.currentExercisePlan.duration1) * 100 + '%' };
+  }
+
 }
