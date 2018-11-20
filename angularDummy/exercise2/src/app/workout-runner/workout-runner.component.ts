@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkoutPlan, ExercisePlan, Exercise } from './shared/model';
 import { WorkoutServiceService } from '../core/workout-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -21,7 +22,9 @@ export class WorkoutRunnerComponent implements OnInit {
   exerciseTimeTracker: number;
 
 
-  constructor(private workoutServiceService: WorkoutServiceService) { }
+  constructor(
+    private workoutServiceService: WorkoutServiceService,
+    private router: Router) { }
 
   ngOnInit() {
 
@@ -88,6 +91,9 @@ export class WorkoutRunnerComponent implements OnInit {
             this.currentExercisePlanIndex++;
           }
           this.startExercise(nextExercisePlan);
+        } else {
+
+          this.router.navigate(['/finish']);
         }
         return;
       }
@@ -96,6 +102,12 @@ export class WorkoutRunnerComponent implements OnInit {
     }, 1000);
   }
 
+  /**
+   * this implementation return null after last exercise.
+   *
+   * if currentExercisePlan is not rest, then return next
+   * exercisePlan of current workoutPlan otherwise return restExercisePlan.
+   */
   private getNextExercisePlan(): ExercisePlan {
 
     let nextExercise: ExercisePlan = null;
