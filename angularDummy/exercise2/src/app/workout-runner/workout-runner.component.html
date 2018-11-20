@@ -9,6 +9,10 @@
   <div class="col-sm-6"
     id="exercise-pane">
 
+    <div id="pause-overlay" (click)="toogle()" (window:keyup)="onKeyPressed($event)">
+         <span class="pause absolute-center" [ngClass]="{'ion-md-pause': !workoutPaused, 'ion-md-play': workoutPaused}"></span>
+    </div>
+
     <!--display workout time remaining -->
     <h4 class="text-center">Workout Remaining - {{workoutTimeRemaining | numberToSeconds}}</h4>
 

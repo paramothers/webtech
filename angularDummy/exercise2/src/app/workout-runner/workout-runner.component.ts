@@ -17,6 +17,9 @@ export class WorkoutRunnerComponent implements OnInit {
   currentExercisePlanIndex = 0;
   currentExerciseRunningDuration = 0;
 
+  workoutPaused = false;
+  exerciseTimeTracker: number;
+
 
   constructor(private workoutServiceService: WorkoutServiceService) { }
 
@@ -25,6 +28,33 @@ export class WorkoutRunnerComponent implements OnInit {
     this.workoutPlan = this.workoutServiceService.getWorkoutPlan();
     this.restExercisePlan = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png', '', '', []), 5);
     this.start();
+  }
+
+  private pause(): void {
+
+    this.workoutPaused = true;
+    window.clearInterval(this.exerciseTimeTracker);
+  }
+
+  private play(): void {
+    this.workoutPaused = false;
+    this.startTrackingCurrentExercise();
+  }
+
+  private toogle(): void {
+    if (this.workoutPaused) {
+
+      this.play();
+    } else {
+      this.pause();
+    }
+  }
+
+  private onKeyPressed(event: KeyboardEvent): void {
+
+    if (event.which === 80 || event.which === 112) {
+      this.toogle();
+    }
   }
 
   // start the workoutPlan
@@ -42,14 +72,15 @@ export class WorkoutRunnerComponent implements OnInit {
     this.startTrackingCurrentExercise();
   }
 
+  // this separate method helps to implement easily pause-play functionality
   private startTrackingCurrentExercise(): void {
 
 
-    const exerciseTimeTracker = window.setInterval(() => {
+    this.exerciseTimeTracker = window.setInterval(() => {
 
       if (this.currentExerciseRunningDuration >= this.currentExercisePlan.duration1) {
 
-        window.clearInterval(exerciseTimeTracker);
+        window.clearInterval(this.exerciseTimeTracker);
         const nextExercisePlan = this.getNextExercisePlan();
         if (nextExercisePlan) {
           if (nextExercisePlan !== this.restExercisePlan) {
