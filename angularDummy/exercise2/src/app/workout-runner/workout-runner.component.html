@@ -1,7 +1,9 @@
 <div class="row pt-4">
 
-  <div class="col-sm-3" id="description-panel">
-    <abe-exercise-description [description]="currentExercisePlan.exercise.description" [steps]="currentExercisePlan.exercise.procedure"></abe-exercise-description>
+  <div class="col-sm-3"
+    id="description-panel">
+    <abe-exercise-description [description]="currentExercisePlan.exercise.description"
+      [steps]="currentExercisePlan.exercise.procedure"></abe-exercise-description>
   </div>
 
   <div class="col-sm-6"
@@ -33,8 +35,13 @@
 
     <!-- display remaining seconds of current exercise -->
     <div class="row">
-        <h4 class="col-sm-6 text-left">Time Remaining:</h4>
+      <h4 class="col-sm-6 text-left">Time Remaining:
         <strong>{{(currentExercisePlan.duration1 - currentExerciseRunningDuration ) | numberToSeconds}}</strong>
+      </h4>
+      <h4 class="col-sm-6 text-left"
+        *ngIf="currentExercisePlan.exercise.name=='rest'"> Next up:
+        <strong>{{workoutPlan.exercises[currentExercisePlanIndex+1].exercise.title}}</strong>
+      </h4>
     </div>
   </div>
   <div class="col-sm-3">
@@ -42,3 +49,9 @@
   </div>
 </div>
 
+<div [ngSwitch]="currentExercisePlanIndex">
+
+  <div *ngSwitchCase="0">First Exercise</div>
+  <div *ngSwitchCase="1">Second Exercise</div>
+  <div *ngSwitchDefault> This is not in my list {{currentExercisePlanIndex}}</div>
+</div>
