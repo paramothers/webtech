@@ -11,6 +11,7 @@ export class ExerciseDescriptionComponent implements OnInit {
   description: string;
   @Input()
   steps: string;
+  today: any = new Date();
 
   constructor() { }
 

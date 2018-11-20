@@ -4,12 +4,17 @@ import { WorkoutRunnerComponent } from './workout-runner.component';
 import { WorkoutServiceService } from '../core/workout-service.service';
 import { ExerciseDescriptionComponent } from './exercise-description/exercise-description.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
+import { NumberToSecondsPipe } from './shared/number-to-seconds.pipe';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [WorkoutRunnerComponent, ExerciseDescriptionComponent, VideoPlayerComponent],
+  declarations: [
+    WorkoutRunnerComponent,
+    ExerciseDescriptionComponent,
+    VideoPlayerComponent,
+    NumberToSecondsPipe],
   exports: [
     WorkoutRunnerComponent
   ],

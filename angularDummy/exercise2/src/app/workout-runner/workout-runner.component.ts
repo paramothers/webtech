@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkoutPlan, ExercisePlan, Exercise } from '../core/model';
+import { WorkoutPlan, ExercisePlan, Exercise } from './shared/model';
 import { WorkoutServiceService } from '../core/workout-service.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class WorkoutRunnerComponent implements OnInit {
   ngOnInit() {
 
     this.workoutPlan = this.workoutServiceService.getWorkoutPlan();
-    this.restExercisePlan = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), 5);
+    this.restExercisePlan = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png', '', '', []), 5);
     this.start();
   }
 
@@ -45,7 +45,6 @@ export class WorkoutRunnerComponent implements OnInit {
   private startTrackingCurrentExercise(): void {
 
 
-    console.log('exercise Plan ', this.currentExercisePlan);
     const exerciseTimeTracker = window.setInterval(() => {
 
       if (this.currentExerciseRunningDuration >= this.currentExercisePlan.duration1) {

@@ -8,7 +8,7 @@
     id="exercise-pane">
 
     <!--display workout time remaining -->
-    <h4 class="text-center">Workout Remaining - {{workoutTimeRemaining}}</h4>
+    <h4 class="text-center">Workout Remaining - {{workoutTimeRemaining | numberToSeconds}}</h4>
 
     <!--disply current exercise name-->
     <h1 class="text-center">{{currentExercisePlan.exercise.title}}</h1>
@@ -34,11 +34,11 @@
     <!-- display remaining seconds of current exercise -->
     <div class="row">
         <h4 class="col-sm-6 text-left">Time Remaining:</h4>
-        <strong>{{currentExercisePlan.duration1 - currentExerciseRunningDuration}}</strong>
+        <strong>{{(currentExercisePlan.duration1 - currentExerciseRunningDuration ) | numberToSeconds}}</strong>
     </div>
   </div>
   <div class="col-sm-3">
-    <p>this is right most column</p>
+    <abe-video-player [videos]="currentExercisePlan.exercise.videos"></abe-video-player>
   </div>
 </div>
 

@@ -7,7 +7,7 @@ export class Exercise {
     public image: string,
     public nameSound?: string,
     public procedure?: string,
-    public video?: Array<string>) { }
+    public videos?: Array<string>) { }
 }
 
 export class WorkoutPlan {
