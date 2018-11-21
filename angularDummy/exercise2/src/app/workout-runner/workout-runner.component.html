@@ -40,7 +40,7 @@
     <!-- display remaining seconds of current exercise -->
     <div class="row">
       <h4 class="col-sm-6 text-left">Time Remaining:
-        <strong>{{(currentExercisePlan.duration1 - currentExerciseRunningDuration ) | numberToSeconds}}</strong>
+        <strong>{{(currentExercisePlan.duration1 - currentExerciseRunningDuration ) }}</strong>
       </h4>
       <h4 class="col-sm-6 text-left"
         *ngIf="currentExercisePlan.exercise.name=='rest'"> Next up:

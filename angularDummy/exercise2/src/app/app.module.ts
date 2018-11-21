@@ -8,12 +8,14 @@ import { FinishComponent } from './finish/finish.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppConfig } from './core/app-config';
+import { WorkoutHistoryComponent } from './workout-history/workout-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
-    FinishComponent
+    FinishComponent,
+    WorkoutHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { AppConfig } from './core/app-config';
   providers: [
     { provide: 'waitingtime', useValue: 5 },
     { provide: 'exerciseDuration', useValue: 10 },
-    { provide: 'AppConfig', useValue: new AppConfig(5, 10, 20) }
+    { provide: 'AppConfig', useValue: new AppConfig(3, 5, 20) }
   ],
   bootstrap: [AppComponent]
 })
