@@ -7,8 +7,7 @@ import { StartComponent } from './start/start.component';
 import { FinishComponent } from './finish/finish.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CoreModule } from './core/core.module';
-
-export const REST_IN_BETWEEN_EXERCISE_TIME = new InjectionToken<number>('10');
+import { AppConfig } from './core/app-config';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,14 @@ export const REST_IN_BETWEEN_EXERCISE_TIME = new InjectionToken<number>('10');
     AppRoutingModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'waitingtime', useValue: 5 },
+    { provide: 'exerciseDuration', useValue: 10 },
+    { provide: 'AppConfig', useValue: new AppConfig(5, 10, 20) }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

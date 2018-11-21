@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { WorkoutPlan, ExercisePlan, Exercise } from './shared/model';
 import { WorkoutServiceService } from '../core/workout-service.service';
 import { Router } from '@angular/router';
@@ -27,12 +27,15 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
   constructor(
     private workoutServiceService: WorkoutServiceService,
     private router: Router,
-    private workoutHistoryTrackerService: WorkoutHistoryTrackerService) { }
+    private workoutHistoryTrackerService: WorkoutHistoryTrackerService,
+    @Inject('waitingtime')
+    private waitingTime: number
+    ) { }
 
   ngOnInit() {
 
     this.workoutPlan = this.workoutServiceService.getWorkoutPlan();
-    this.restExercisePlan = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png', '', '', []), 5);
+    this.restExercisePlan = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png', '', '', []), this.waitingTime);
     this.start();
   }
   ngOnDestroy(): void {

@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
-import { WorkoutPlan, Exercise, ExercisePlan } from '../workout-runner/shared/model';
+import { Injectable, Inject } from '@angular/core';
+import { Exercise, ExercisePlan, WorkoutPlan } from '../workout-runner/shared/model';
 import { CoreModule } from './core.module';
+import { AppConfig } from './app-config';
 
 @Injectable({
   providedIn: CoreModule
 })
 export class WorkoutServiceService {
 
-  constructor() { }
+  constructor( @Inject('AppConfig')
+  private appConfig: AppConfig) { }
 
   public getWorkoutPlan(): WorkoutPlan {
 
@@ -15,11 +17,11 @@ export class WorkoutServiceService {
 
     workoutPlan = new WorkoutPlan('7-Minute', '7-Minute Workout', 5, [], 'it is for workout to complete in 7 minutes');
     // TODO: move this numbers to constant util file
-    workoutPlan.exercises.push(new ExercisePlan(this.getJumpingExercise(), 10));
-    workoutPlan.exercises.push(new ExercisePlan(this.getWallSittingExercise(), 10));
+    workoutPlan.exercises.push(new ExercisePlan(this.getJumpingExercise(), this.appConfig.EXERCISE_DURIATION));
+    workoutPlan.exercises.push(new ExercisePlan(this.getWallSittingExercise(), this.appConfig.EXERCISE_DURIATION));
     workoutPlan.exercises.push(new ExercisePlan(new Exercise('Running Exercise', 'Running', 'Healing Heart', 'running.png',
       '', 'Procedurere...Procedurere...Procedurere...Procedurere...',
-      ['Eh00_rniF8E', 'ZWdBqFLNljc', 'UwRLWMcOdwI', 'ynPwl6qyUNM', 'OicNTT2xzMI']), 10));
+      ['Eh00_rniF8E', 'ZWdBqFLNljc', 'UwRLWMcOdwI', 'ynPwl6qyUNM', 'OicNTT2xzMI']), this.appConfig.EXERCISE_DURIATION));
 
     return workoutPlan;
   }

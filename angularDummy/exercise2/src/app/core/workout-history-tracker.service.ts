@@ -1,20 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { CoreModule } from './core.module';
 import { ExercisePlan } from '../workout-runner/shared/model';
 import { LocalStorageService } from './local-storage.service';
+import { AppConfig } from './app-config';
 
 @Injectable({
   providedIn: CoreModule
 })
 export class WorkoutHistoryTrackerService {
 
-  private maxHistoryITem = 20;
+  private maxHistoryITem = 0;
   private currentWorkoutLog: WorkoutLogEntry = null;
   private workoutHistory: Array<WorkoutLogEntry> = [];
   private workoutTracked: boolean;
   private storageKey = 'workouts';
 
-  constructor(private storage: LocalStorageService) {
+  constructor(
+    private storage: LocalStorageService,
+    @Inject('AppConfig')
+    private appConfig: AppConfig) {
+
+    this.maxHistoryITem = appConfig.MAX_ENTRY_STORAGE;
 
     // this is load history from storage and make it as a Array of WorkoutLotHistory object
     this.workoutHistory = (storage.getItem<Array<WorkoutLogEntry>>(this.storageKey) || [])
