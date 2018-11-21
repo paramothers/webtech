@@ -5,6 +5,22 @@
   </div>
   <div class="row">
     <label>Workouts</label>
+    <label>Filter Workouts: </label>
+    <div class="btn-group">
+      <label><input type="radio"
+          name="searchFilter"
+          value=""
+          (change)="completed = null"
+          checked="">All </label>
+      <label><input type="radio"
+          name="searchFilter"
+          value="true"
+          (change)="completed = $event.target.value=='true'">Completed </label>
+      <label><input type="radio"
+          name="searchFilter"
+          value="false"
+          (change)="completed = $event.target.value=='true'">Incomplete </label>
+    </div>
   </div>
   <div class="row table-responsive">
     <table class="table">
@@ -19,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let historyItem of history; let i = index">
+        <tr *ngFor="let historyItem of history| search:'completed':completed|orederBy:'-startedOn'; let i = index">
           <td>{{i+1}}</td>
           <td>{{historyItem.startedOn | date:'short'}}</td>
           <td>{{historyItem.endedOn | date:'short'}}</td>
@@ -35,6 +51,7 @@
     </table>
   </div>
   <div class="row">
-    <button class="btn btn-primary pull-right" (click)="goBack()" >Back</button>
+    <button class="btn btn-primary pull-right"
+      (click)="goBack()">Back</button>
   </div>
 </div>

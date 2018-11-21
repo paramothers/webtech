@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppConfig } from './core/app-config';
 import { WorkoutHistoryComponent } from './workout-history/workout-history.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WorkoutHistoryComponent } from './workout-history/workout-history.compo
 
     WorkoutRunnerModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   providers: [
     { provide: 'waitingtime', useValue: 5 },

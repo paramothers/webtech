@@ -21,8 +21,9 @@ export class HeaderComponent  {
 
     this.router.events.pipe(filter(e => e instanceof NavigationEnd))
       .subscribe((e: NavigationEnd) => {
-        this.showHistoryLink = !e.url.startsWith('/workout');
+        this.showHistoryLink = !(e.url.startsWith('/workout') || e.url.startsWith('/history'));
       });
   }
 
 }
+
