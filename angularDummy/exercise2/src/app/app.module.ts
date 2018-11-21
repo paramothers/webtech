@@ -6,6 +6,7 @@ import { WorkoutRunnerModule } from './workout-runner/workout-runner.module';
 import { StartComponent } from './start/start.component';
 import { FinishComponent } from './finish/finish.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { CoreModule } from './core/core.module';
 
 export const REST_IN_BETWEEN_EXERCISE_TIME = new InjectionToken<number>('10');
 
@@ -17,8 +18,10 @@ export const REST_IN_BETWEEN_EXERCISE_TIME = new InjectionToken<number>('10');
   ],
   imports: [
     BrowserModule,
+
     WorkoutRunnerModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

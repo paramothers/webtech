@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WorkoutPlan, ExercisePlan, Exercise } from './shared/model';
 import { WorkoutServiceService } from '../core/workout-service.service';
 import { Router } from '@angular/router';
+import { WorkoutHistoryTrackerService } from '../core/workout-history-tracker.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
   templateUrl: './workout-runner.component.html',
   styles: []
 })
-export class WorkoutRunnerComponent implements OnInit {
+export class WorkoutRunnerComponent implements OnInit, OnDestroy {
+
 
   workoutPlan: WorkoutPlan;
   restExercisePlan: ExercisePlan;
@@ -24,13 +26,17 @@ export class WorkoutRunnerComponent implements OnInit {
 
   constructor(
     private workoutServiceService: WorkoutServiceService,
-    private router: Router) { }
+    private router: Router,
+    private workoutHistoryTrackerService: WorkoutHistoryTrackerService) { }
 
   ngOnInit() {
 
     this.workoutPlan = this.workoutServiceService.getWorkoutPlan();
     this.restExercisePlan = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png', '', '', []), 5);
     this.start();
+  }
+  ngOnDestroy(): void {
+    this.workoutHistoryTrackerService.endTracking(false);
   }
 
   private pause(): void {
@@ -64,6 +70,7 @@ export class WorkoutRunnerComponent implements OnInit {
   private start(): void {
 
     this.workoutTimeRemaining = this.workoutPlan.totalWorkoutDuration();
+    this.workoutHistoryTrackerService.startTracking();
     this.startExercise(this.workoutPlan.exercises[this.currentExercisePlanIndex]);
   }
 
@@ -84,6 +91,10 @@ export class WorkoutRunnerComponent implements OnInit {
       if (this.currentExerciseRunningDuration >= this.currentExercisePlan.duration1) {
 
         window.clearInterval(this.exerciseTimeTracker);
+        if (this.currentExercisePlan !== this.restExercisePlan) {
+
+          this.workoutHistoryTrackerService.exerciseComplete(this.currentExercisePlan);
+        }
         const nextExercisePlan = this.getNextExercisePlan();
         if (nextExercisePlan) {
           if (nextExercisePlan !== this.restExercisePlan) {
@@ -93,6 +104,7 @@ export class WorkoutRunnerComponent implements OnInit {
           this.startExercise(nextExercisePlan);
         } else {
 
+          this.workoutHistoryTrackerService.endTracking(true);
           this.router.navigate(['/finish']);
         }
         return;

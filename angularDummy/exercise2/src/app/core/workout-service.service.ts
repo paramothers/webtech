@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { WorkoutPlan, Exercise, ExercisePlan } from '../workout-runner/shared/model';
+import { CoreModule } from './core.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: CoreModule
 })
 export class WorkoutServiceService {
 
