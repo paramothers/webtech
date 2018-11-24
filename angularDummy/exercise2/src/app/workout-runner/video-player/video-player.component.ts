@@ -1,29 +1,29 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import { overlayConfigFactory } from 'ngx-modialog';
+import { VideoDialogComponent, VideoDialogContext } from './video-dialog/video-dialog.component';
 
 @Component({
   selector: 'abe-video-player',
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.css']
 })
-export class VideoPlayerComponent implements OnInit, OnChanges {
+export class VideoPlayerComponent implements OnInit {
 
-  private youtubeUrlPrefix = '//www.youtube.com/embed/';
 
   @Input()
   videos: Array<string>;
 
-  safeVideoUrls: Array<SafeResourceUrl>;
-  constructor(private domSanitizer: DomSanitizer) { }
+  constructor(private modal: Modal) { }
 
   ngOnInit() {
   }
-  ngOnChanges() {
 
-    if (this.videos) {
+  playVideo(vidoeId: string) {
 
-      this.safeVideoUrls = this.videos.map(v => this.domSanitizer.bypassSecurityTrustResourceUrl(this.youtubeUrlPrefix + v));
-    }
+    this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(vidoeId)));
   }
+
 
 }

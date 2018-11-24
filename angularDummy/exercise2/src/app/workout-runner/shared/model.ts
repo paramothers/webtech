@@ -39,3 +39,20 @@ export class ExercisePlan {
     public duration1: number
   ) { }
 }
+
+export class ExerciseProgressEvent {
+
+  constructor(
+    public exercisePlan: ExercisePlan,
+    public runningFor: number,
+    public timeRemaining: number,
+    public workoutTimeRemaining: number
+  ) { }
+}
+
+export class ExerciseChangedEvent {
+  constructor(
+    public currentExercisePlan: ExercisePlan,
+    public nextExercisePlan: ExercisePlan
+  ) {  }
+}
