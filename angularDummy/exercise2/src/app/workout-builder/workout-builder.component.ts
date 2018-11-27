@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'abe-workout-builder',
-  templateUrl: './workout-builder.component.html',
-  styleUrls: ['./workout-builder.component.css']
+  template: `<div class="container-fluid fixed-top mt-5"> <div class="row mt-5">
+  </div> <div class="row mt-2"> <div class="col-sm-12"> dfgfg <router-outlet></router-outlet>
+  </div> </div> <div>`,
+  styles: []
 })
 export class WorkoutBuilderComponent implements OnInit {
 

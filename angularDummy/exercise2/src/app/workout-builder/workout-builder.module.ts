@@ -19,6 +19,6 @@ import { WorkoutBuilderRoutingModule } from './workout-builder.routing';
     WorkoutsComponent,
     WorkoutComponent
   ],
-  exports: [WorkoutBuilderComponent]
+  exports: []
 })
 export class WorkoutBuilderModule { }

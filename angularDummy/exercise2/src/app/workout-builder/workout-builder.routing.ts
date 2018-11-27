@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { WorkoutBuilderComponent } from "./workout-builder.component";
-import { WorkoutsComponent } from "./workouts/workouts.component";
-import { WorkoutComponent } from "./workout/workout.component";
-import { ExerciseComponent } from "./exercise/exercise.component";
-import { ExercisesComponent } from "./exercises/exercises.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { WorkoutBuilderComponent } from './workout-builder.component';
+import { WorkoutsComponent } from './workouts/workouts.component';
+import { WorkoutComponent } from './workout/workout.component';
+import { ExerciseComponent } from './exercise/exercise.component';
+import { ExercisesComponent } from './exercises/exercises.component';
 
 const routes: Routes = [
   {
