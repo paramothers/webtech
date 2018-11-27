@@ -5,7 +5,10 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { ExerciseComponent } from './exercise/exercise.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { WorkoutComponent } from './workout/workout.component';
-import { WorkoutBuilderRoutingModule } from './workout-builder.routing';
+import { WorkoutBuilderRoutingModule } from './workout-builder.routing.module';
+import { LeftNavExercisesComponent } from './navigation/left-nav-exercises.component';
+import { LeftNavMainComponent } from './navigation/left-nav-main.component';
+import { SubNavMainComponent } from './navigation/sub-nav-main.component';
 
 @NgModule({
   imports: [
@@ -17,7 +20,10 @@ import { WorkoutBuilderRoutingModule } from './workout-builder.routing';
     ExercisesComponent,
     ExerciseComponent,
     WorkoutsComponent,
-    WorkoutComponent
+    WorkoutComponent,
+    LeftNavExercisesComponent,
+    LeftNavMainComponent,
+    SubNavMainComponent
   ],
   exports: []
 })

@@ -8,8 +8,7 @@ import { ExercisesComponent } from './exercises/exercises.component';
 
 const routes: Routes = [
   {
-    path: 'builder',
-    component: WorkoutBuilderComponent,
+    path: '', component: WorkoutBuilderComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'workouts' },
       { path: 'workouts', component: WorkoutsComponent },

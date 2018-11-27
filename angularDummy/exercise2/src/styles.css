@@ -73,7 +73,6 @@ body {
   margin-left: 325px;
 }
 /*styles for builder content - end*
-
 /*styles for top nav bar - start*/
 .top-navbar {
   background-color: #4eaded;
@@ -397,39 +396,3 @@ body {
   color: white;
   font-weight: bold;
 }
-
-/*styles for spinner- start*/
-.spin {
-  -webkit-animation: spin .8s infinite linear;
-  -moz-animation: spin 1s infinite linear;
-  -o-animation: spin 1s infinite linear;
-  animation: spin 1s infinite linear;
-}
-
-@-moz-keyframes spin {
-from {
-  -moz-transform: rotate(0deg);
-}
-to {
-  -moz-transform: rotate(360deg);
-}
-}
-
-@-webkit-keyframes spin {
-from {
-  -webkit-transform: rotate(0deg);
-}
-to {
-  -webkit-transform: rotate(360deg);
-}
-}
-
-@keyframes spin {
-from {
-  transform: rotate(0deg);
-}
-to {
-  transform: rotate(360deg);
-}
-}
-/*styles for spinner- end*/

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { StartComponent } from './start/start.component';
 import { FinishComponent } from './finish/finish.component';
 import { WorkoutHistoryComponent } from './workout-history/workout-history.component';
@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'workout', component: WorkoutContainerComponent },
   { path: 'finish', component: FinishComponent },
   { path: 'history', component: WorkoutHistoryComponent },
-  { path: 'builder', loadChildren: './workout-builder/workout-builder.module.ts#WorkoutBuilderModule' },
+  { path: 'builder', loadChildren: './workout-builder/workout-builder.module#WorkoutBuilderModule'},
   { path: '**', redirectTo: '/start' }
 ];
 
