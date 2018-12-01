@@ -1,4 +1,20 @@
-<p>
-  workouts works!
-   sdhflksdflsdjfkjl;
-</p>
+<div class="row">
+  <div>
+    <abe-left-nav-main></abe-left-nav-main>
+  </div>
+  <div class="col-sm-10 builder-content">
+    <h1 class="text-center">Workout</h1>
+    <div *ngFor="let workout of workoutPlanArray|orederBy:'title'"  class="workout tile" (click)="onSelect(workout)">
+      <div class="title">{{workout.title}}</div>
+      <div>
+        <span class="duration" title="Duration">
+          <span class="ion-md-time"></span> - {{(workout.totalWorkoutDuration ? workout.totalWorkoutDuration(): 0)| numberToSeconds}}
+        </span>
+        <span class="float-right" title="Exercise Count">
+               <span class="ion-md-list"></span> - {{workout.exercises.length}}
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>

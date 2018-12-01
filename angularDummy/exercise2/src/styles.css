@@ -2,7 +2,6 @@
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~ionicons/dist/css/ionicons.min.css";
-
 body {
   font-size: 13px;
   font-family: 'Roboto Slab';
@@ -73,6 +72,7 @@ body {
   margin-left: 325px;
 }
 /*styles for builder content - end*
+
 /*styles for top nav bar - start*/
 .top-navbar {
   background-color: #4eaded;

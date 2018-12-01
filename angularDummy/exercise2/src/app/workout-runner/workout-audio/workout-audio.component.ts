@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { MyAudioDirective } from 'src/app/shared/my-audio.directive';
-import { ExerciseChangedEvent, ExerciseProgressEvent } from '../shared/model';
+import { ExerciseChangedEvent, ExerciseProgressEvent } from '../../shared/model';
 
 @Component({
   selector: 'abe-workout-audio',

@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { CoreModule } from './core.module';
-import { ExercisePlan } from '../workout-runner/shared/model';
+import { ExercisePlan } from '../shared/model';
 import { LocalStorageService } from './local-storage.service';
 import { AppConfig } from './app-config';
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { OrederByPipe } from './oreder-by.pipe';
 import { SearchPipe } from './search.pipe';
 import { MyAudioDirective } from './my-audio.directive';
+import { NumberToSecondsPipe } from './number-to-seconds.pipe';
 
 @NgModule({
   imports: [
@@ -11,11 +12,13 @@ import { MyAudioDirective } from './my-audio.directive';
   declarations: [
     OrederByPipe,
     SearchPipe,
-    MyAudioDirective],
+    MyAudioDirective,
+    NumberToSecondsPipe],
 
   exports: [
     OrederByPipe,
     SearchPipe,
-    MyAudioDirective]
+    MyAudioDirective,
+    NumberToSecondsPipe]
 })
 export class SharedModule { }

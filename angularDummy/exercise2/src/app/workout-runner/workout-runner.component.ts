@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Inject, EventEmitter, Output } from '@angular/core';
-import { WorkoutPlan, ExercisePlan, Exercise, ExerciseProgressEvent, ExerciseChangedEvent } from './shared/model';
-import { WorkoutServiceService } from '../core/workout-service.service';
+import { WorkoutPlan, ExercisePlan, Exercise, ExerciseProgressEvent, ExerciseChangedEvent } from '../shared/model';
+import { WorkoutService } from '../core/workout.service';
 import { Router } from '@angular/router';
 import { WorkoutHistoryTrackerService } from '../core/workout-history-tracker.service';
 
@@ -43,7 +43,7 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private workoutServiceService: WorkoutServiceService,
+    private workoutServiceService: WorkoutService,
     private router: Router,
     private workoutHistoryTrackerService: WorkoutHistoryTrackerService,
     @Inject('waitingtime')
