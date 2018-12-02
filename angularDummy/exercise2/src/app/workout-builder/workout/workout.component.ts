@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkoutBuilderService } from '../builder-service/workout-builder.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WorkoutPlan, ExercisePlan } from '../../shared/model';
 
 @Component({
@@ -12,8 +12,11 @@ export class WorkoutComponent implements OnInit {
 
   workout: WorkoutPlan;
   removeTouched: boolean = false;
+  submitted: boolean = false;
+
   constructor(
     public route: ActivatedRoute,
+    private router: Router,
     public workoutBuilderService: WorkoutBuilderService) { }
 
   durations = [
@@ -46,7 +49,7 @@ export class WorkoutComponent implements OnInit {
   }
 
   removeExercise(exercisePlan: ExercisePlan) {
-    this.removeTouched =  true;
+    this.removeTouched = true;
     this.workoutBuilderService.removeExercise(exercisePlan);
   }
 
@@ -55,6 +58,16 @@ export class WorkoutComponent implements OnInit {
   }
 
   save(formWorkout: any) {
+
+    console.log('saved fired..');
+    this.submitted = true;
+    if (!formWorkout.valid) {
+
+      console.log('saved errro ..');
+      return;
+    }
+    this.workoutBuilderService.save();
+    this.router.navigate(['/builder/workouts']);
 
   }
 }

@@ -8,6 +8,7 @@ import { AppConfig } from './app-config';
 })
 export class WorkoutService {
 
+
   workoutPlanArray: Array<WorkoutPlan> = [];
   exercises: Array<Exercise> = [];
 
@@ -18,6 +19,25 @@ export class WorkoutService {
     this.setupInitialWorkouts();
   }
 
+  updateWorkout(buildingWorkout: WorkoutPlan): any {
+
+    for (let i = 0; i < this.workoutPlanArray.length; i++) {
+
+      if (this.workoutPlanArray[i].name === buildingWorkout.name) {
+        this.workoutPlanArray[i] = buildingWorkout;
+        break;
+      }
+    }
+
+  }
+  addWorkout(buildingWorkout: WorkoutPlan): any {
+    console.log('reached add workout in workout serfvice');
+    if (buildingWorkout.name) {
+
+      this.workoutPlanArray.push(buildingWorkout);
+      return buildingWorkout;
+    }
+  }
   public getExercises(): Array<Exercise> {
     return this.exercises;
   }

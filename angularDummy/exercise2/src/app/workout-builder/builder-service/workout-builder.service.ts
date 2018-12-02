@@ -6,6 +6,7 @@ import { WorkoutService } from 'src/app/core/workout.service';
 @Injectable()
 export class WorkoutBuilderService {
 
+
   buildingWorkout: WorkoutPlan;
   newWorkout: boolean;
   firstExercise = true;
@@ -23,6 +24,12 @@ export class WorkoutBuilderService {
       this.newWorkout = true;
     }
     return this.buildingWorkout;
+  }
+
+  save(): any {
+    console.log('reached add workout in workoutBuilder serfvice');
+    this.newWorkout ?
+      this.workoutService.addWorkout(this.buildingWorkout) : this.workoutService.updateWorkout(this.buildingWorkout);
   }
 
   removeExercise(exercisePlan: ExercisePlan): void {
