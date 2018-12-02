@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { WorkoutBuilderComponent } from './workout-builder.component';
 import { ExercisesComponent } from './exercises/exercises.component';
@@ -13,13 +13,16 @@ import { SubNavMainComponent } from './navigation/sub-nav-main.component';
 import { SharedModule } from '../shared/shared.module';
 import { WorkoutResolveGuard } from './workout/workout-resolve.guard';
 import { WorkoutBuilderService } from './builder-service/workout-builder.service';
+import { ExerciseBuilderService } from './builder-service/exercise-builder.service';
+import { ExerciseResolverGuard } from './exercise/exercise-resolver.guard';
 
 @NgModule({
   imports: [
     CommonModule,
     WorkoutBuilderRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     WorkoutBuilderComponent,
@@ -32,6 +35,11 @@ import { WorkoutBuilderService } from './builder-service/workout-builder.service
     SubNavMainComponent
   ],
   exports: [],
-  providers: [WorkoutBuilderService, WorkoutResolveGuard]
+  providers: [
+    WorkoutBuilderService,
+    WorkoutResolveGuard,
+    ExerciseBuilderService,
+    ExerciseResolverGuard
+  ]
 })
 export class WorkoutBuilderModule { }

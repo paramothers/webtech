@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Exercise, ExercisePlan, WorkoutPlan } from '../shared/model';
 import { CoreModule } from './core.module';
 import { AppConfig } from './app-config';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: CoreModule
@@ -9,8 +10,10 @@ import { AppConfig } from './app-config';
 export class WorkoutService {
 
 
+
   workoutPlanArray: Array<WorkoutPlan> = [];
   exercises: Array<Exercise> = [];
+
 
   constructor(@Inject('AppConfig')
   private appConfig: AppConfig) {
@@ -38,6 +41,43 @@ export class WorkoutService {
       return buildingWorkout;
     }
   }
+
+  updateExercise(buildingExercise: Exercise): Exercise {
+
+    for (let i = 0; i < this.exercises.length; i++) {
+
+      if (this.exercises[i].name === buildingExercise.name) {
+        this.exercises[i] = buildingExercise;
+        break;
+      }
+      return buildingExercise;
+    }
+
+  }
+  addExercise(buildingExercise: Exercise): Exercise {
+
+    if (buildingExercise.name) {
+      this.exercises.push(buildingExercise);
+      return buildingExercise;
+    }
+    return null;
+  }
+
+  deleteExercise(name: string) {
+
+    let exerciseIndex: number;
+
+    for (let i = 0; i < this.exercises.length; i++) {
+      if (this.exercises[i].name === name) {
+        exerciseIndex = i;
+      }
+    }
+
+    if (exerciseIndex >= 0) {
+      this.exercises.splice(exerciseIndex, 1);
+    }
+  }
+
   public getExercises(): Array<Exercise> {
     return this.exercises;
   }
@@ -293,6 +333,18 @@ export class WorkoutService {
       }
     }
     return null;
+  }
+
+  public getExercise(name: string): Exercise {
+
+    for (const exercise of this.exercises) {
+
+      if (exercise.name === name) {
+        return exercise;
+      }
+      return null;
+    }
+
   }
 
 
