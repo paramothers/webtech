@@ -13,6 +13,7 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'workouts' },
       { path: 'workouts', component: WorkoutsComponent },
+      { path: 'workouts/workout-not-found', component: WorkoutsComponent },
       { path: 'workout/new', component: WorkoutComponent, resolve: {workout: WorkoutResolveGuard} },
       { path: 'workout/:id', component: WorkoutComponent, resolve: {workout: WorkoutResolveGuard} },
       { path: 'exercises', component: ExercisesComponent },

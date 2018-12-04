@@ -7,22 +7,25 @@ import { WorkoutService } from 'src/app/core/workout.service';
 export class WorkoutBuilderService {
 
 
-  buildingWorkout: WorkoutPlan;
+  buildingWorkout: any;
   newWorkout: boolean;
   firstExercise = true;
 
+
   constructor(public workoutService: WorkoutService) { }
 
-  startBuilding(name: string): WorkoutPlan {
+  startBuilding(name: string): any {
 
-    if (name) {
-      this.buildingWorkout = this.workoutService.getWorkout(name);
-      this.newWorkout = false;
-    } else {
+    this.newWorkout = false;
+    return this.workoutService.getWorkout(name);
 
-      this.buildingWorkout = new WorkoutPlan('', '', 30, [], 'New workout');
-      this.newWorkout = true;
-    }
+  }
+
+  startBuildingNew(): WorkoutPlan {
+
+    const exercisePlan: Array<ExercisePlan> = [];
+    this.buildingWorkout = new WorkoutPlan('', '', 30, exercisePlan);
+    this.newWorkout = true;
     return this.buildingWorkout;
   }
 

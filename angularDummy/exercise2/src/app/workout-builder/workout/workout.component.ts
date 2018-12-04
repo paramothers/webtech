@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WorkoutBuilderService } from '../builder-service/workout-builder.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WorkoutPlan, ExercisePlan } from '../../shared/model';
@@ -8,16 +8,24 @@ import { WorkoutPlan, ExercisePlan } from '../../shared/model';
   templateUrl: './workout.component.html',
   styleUrls: ['./workout.component.css']
 })
-export class WorkoutComponent implements OnInit {
+export class WorkoutComponent implements OnInit, OnDestroy {
+
 
   workout: WorkoutPlan;
   removeTouched: boolean = false;
   submitted: boolean = false;
+  sub: any;
+  public notFound = false;
 
   constructor(
     public route: ActivatedRoute,
     private router: Router,
-    public workoutBuilderService: WorkoutBuilderService) { }
+    public workoutBuilderService: WorkoutBuilderService) {
+
+    if (route.snapshot.url[1] && route.snapshot.url[1].path === 'workout-not-found') {
+      this.notFound = true;
+    }
+  }
 
   durations = [
     { title: '30 seconds', value: 30 },
@@ -43,7 +51,7 @@ export class WorkoutComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.data.subscribe((data: { workout: WorkoutPlan }) => {
+    this.sub = this.route.data.subscribe((data: { workout: WorkoutPlan }) => {
       this.workout = data.workout;
     });
   }
@@ -66,8 +74,13 @@ export class WorkoutComponent implements OnInit {
       console.log('saved errro ..');
       return;
     }
-    this.workoutBuilderService.save();
-    this.router.navigate(['/builder/workouts']);
+    this.workoutBuilderService.save().subscribe(
+      success => this.router.navigate(['/builder/workouts']),
+      error => console.log(error)
+    );
+  }
 
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

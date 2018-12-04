@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { AppConfig } from './core/app-config';
 import { WorkoutHistoryComponent } from './workout-history/workout-history.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     WorkoutRunnerModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     { provide: 'waitingtime', useValue: 5 },

@@ -17,7 +17,7 @@ export class WorkoutPlan {
     public title: string,
     public restBetween: number,
     public exercises: ExercisePlan[],
-    public description: string
+    public description?: string
   ) { }
 
   totalWorkoutDuration(): number {
