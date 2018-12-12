@@ -71,6 +71,8 @@
               name="workoutname"
               #spy
               #nameField="ngModel"
+              abeRemoteValidator = 'workoutname' [validateFunction] = "validateWorkoutName"
+              abeBusyIndicator
               required
               class="form-control"
               id="workout-name"
@@ -79,6 +81,8 @@
             <label>{{spy.className}}</label>
             <label *ngIf="nameField.control.hasError('required') && (nameField.touched || submitted)"
               class="alert alert-danger validation-message">Name is required</label>
+            <label *ngIf="nameField.constrol.hasError('workoutname')"  class="alert alert-danger validation-message"
+            >A Workout Name is already exist</label>
           </div>
           <div class="form-group row">
             <label for="workout-title">Title:</label>
@@ -125,8 +129,10 @@
               *ngIf="workout.exercises.length > 0">{{workout.totalWorkoutDuration() | numberToSeconds}}</p>
           </div>
           <div class="row">
-            <button type="submit"
-              class="btn btn-warning">Save</button>
+            <abe-ajax-button [execute]="save" [parameter]="f">
+              <div class="ion-md-cloud-upload spin" data-animator #spinner></div>
+              <span data-content #text>Save</span>
+            </abe-ajax-button>
           </div>
 
 

@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WorkoutBuilderService } from '../builder-service/workout-builder.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WorkoutPlan, ExercisePlan } from '../../shared/model';
+import { WorkoutService } from 'src/app/core/workout.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'abe-workout',
@@ -11,20 +13,25 @@ import { WorkoutPlan, ExercisePlan } from '../../shared/model';
 export class WorkoutComponent implements OnInit, OnDestroy {
 
 
+  queryParamSub: Subscription;
   workout: WorkoutPlan;
   removeTouched: boolean = false;
   submitted: boolean = false;
   sub: any;
   public notFound = false;
+  private workoutName: string;
 
   constructor(
     public route: ActivatedRoute,
     private router: Router,
-    public workoutBuilderService: WorkoutBuilderService) {
+    public workoutBuilderService: WorkoutBuilderService,
+    private workoutService: WorkoutService) {
 
     if (route.snapshot.url[1] && route.snapshot.url[1].path === 'workout-not-found') {
       this.notFound = true;
     }
+
+
   }
 
   durations = [
@@ -54,6 +61,8 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.sub = this.route.data.subscribe((data: { workout: WorkoutPlan }) => {
       this.workout = data.workout;
     });
+
+    this.queryParamSub = this.route.params.subscribe(params => this.workoutName = params['id']);
   }
 
   removeExercise(exercisePlan: ExercisePlan) {
@@ -65,7 +74,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.workoutBuilderService.moveExerciseTo(exercisePlan, toIndex);
   }
 
-  save(formWorkout: any) {
+  /* save(formWorkout: any) {
 
     console.log('saved fired..');
     this.submitted = true;
@@ -78,9 +87,44 @@ export class WorkoutComponent implements OnInit, OnDestroy {
       success => this.router.navigate(['/builder/workouts']),
       error => console.log(error)
     );
+  } */
+
+  save = (formWorkout: any): Promise<Object | WorkoutPlan> => {
+
+    this.submitted = true;
+    if (!formWorkout.valid) {
+      return;
+    }
+    const savePromise = this.workoutBuilderService.save().toPromise();
+    savePromise.then(
+      result => this.router.navigate(['/builder/workouts']),
+      err => console.error(err)
+    );
+
+    return savePromise;
   }
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+    this.queryParamSub.unsubscribe();
+  }
+
+  /**
+   * first it check the workoutName is currently editing workout. since we dont want to validation
+   * while editing the exitingOne and it is same of currentName.
+   */
+  validateWorkoutName = (name: string): Promise<boolean> => {
+
+    if (this.workoutName === name) {
+      return Promise.resolve(true);
+    }
+
+    return this.workoutService.getWorkout(name)
+      .toPromise()
+      .then((workout: WorkoutPlan) => {
+        return !workout;
+      }, error => {
+        return true;
+      });
   }
 }

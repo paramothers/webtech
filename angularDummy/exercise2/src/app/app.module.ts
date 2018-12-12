@@ -11,13 +11,17 @@ import { AppConfig } from './core/app-config';
 import { WorkoutHistoryComponent } from './workout-history/workout-history.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RemoteValidatorDirective } from './shared/remote-validator.directive';
+import { BusyIndicatorDirective } from './shared/busy-indicator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     FinishComponent,
-    WorkoutHistoryComponent
+    WorkoutHistoryComponent,
+    RemoteValidatorDirective,
+    BusyIndicatorDirective
   ],
   imports: [
     BrowserModule,
