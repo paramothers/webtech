@@ -12,9 +12,8 @@ export class ExerciseBuilderService {
 
   constructor(private workoutService: WorkoutService) { }
 
-  startBuilding(name: string): Exercise {
+ public startBuilding(name: string): Exercise {
     if (name) {
-
       this.buildingExercise = this.workoutService.getExercise(name);
       this.newExercise = false;
     } else {
@@ -25,7 +24,7 @@ export class ExerciseBuilderService {
     return this.buildingExercise;
   }
 
-  save() {
+ private save() {
     const exercise = this.newExercise ?
       this.workoutService.addExercise(this.buildingExercise) :
       this.workoutService.updateExercise(this.buildingExercise);

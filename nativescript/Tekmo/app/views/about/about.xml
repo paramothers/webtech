@@ -1,0 +1,8 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <StackLayout>
+            <Label text="A Big Company, takes IT away from rick stackholders to village" textWrap="true" />
+            <Label text="Targretting Tamilnadu IT Market, provides solutions by Browsers and mobile!" textWrap="true" />
+            <Label text="Come visit us at Jayankondam, Ariyalur, TN, India" />
+            <Button text="Home" tap="onTap" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,6 @@
+<Page>
+    <StackLayout>
+        <Label text="Welcome to the http://pa4.in !" />
+        <Button text="About" tap="onTab" />
+    </StackLayout>    
+</Page>

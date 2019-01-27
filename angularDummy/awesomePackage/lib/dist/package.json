@@ -1,0 +1,23 @@
+{
+  "name": "super-toasty",
+  "version": "0.0.1",
+  "author": "Paramasivam",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=5.0.0",
+    "@angular/common": ">=5.0.0"
+  },
+  "main": "bundles/super-toasty.umd.js",
+  "module": "fesm5/super-toasty.js",
+  "es2015": "fesm2015/super-toasty.js",
+  "esm5": "esm5/super-toasty.js",
+  "esm2015": "esm2015/super-toasty.js",
+  "fesm5": "fesm5/super-toasty.js",
+  "fesm2015": "fesm2015/super-toasty.js",
+  "typings": "super-toasty.d.ts",
+  "metadata": "super-toasty.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
