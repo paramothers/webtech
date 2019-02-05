@@ -1,0 +1,9 @@
+<ActionBar class="action-bar"  title="Featured"></ActionBar>
+
+<ScrollView class="page">
+    <StackLayout class="home-panel">
+        <Button class="btn btn-primary" text="Item" [nsRouterLink]="['../item']"></Button>
+        <Button class="btn btn-primary" text="Modal Browse" (tap)="openModalBrowse()" )></Button>
+        <Button class="btn btn-primary" text="Search" (tap)="openModalSearch()" )></Button>
+    </StackLayout>
+</ScrollView>

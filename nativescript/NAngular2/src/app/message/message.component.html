@@ -1,0 +1,11 @@
+<stack-layout>
+
+    <Button text="message works!" class="btn btn-primary" (ontap)="onTab($event)"></Button>
+    <Label [text]="message"></Label>
+    <Label [text]="today | date: 'fullDate'"></Label>
+    <text-field [(ngModel)]="message"></text-field>
+
+
+</stack-layout>
+
+

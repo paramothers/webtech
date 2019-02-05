@@ -1,0 +1,5 @@
+<TabView androidTabsPosition="top" selectedIndex="0" (selectedIndexChanged)="onSelectedIndexChanged($event)">
+    <page-router-outlet *tabItem="{title:'Featured'}" name="featured"></page-router-outlet>
+    <page-router-outlet *tabItem="{title:'Browse'}" name="browse"></page-router-outlet>
+    <page-router-outlet *tabItem="{title:'Search'}" name="search"></page-router-outlet>
+</TabView>

@@ -1,0 +1,11 @@
+<ActionBar title="Browse" class="action-bar">
+    <NavigationButton  (tab)="onDrawerButtonTap()"> </NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="clollapsed" (tap)="onDrawerButtonTap()"></ActionItem>
+    <Label class="action-bar-title" text="Browse"></Label>
+</ActionBar>
+
+<ScrollView class="page">
+    <StackLayout class="home-panel">
+        <Button class="btn btn-primary" text="category" [nsRouterLink]="['/category']"></Button>
+    </StackLayout>
+</ScrollView>

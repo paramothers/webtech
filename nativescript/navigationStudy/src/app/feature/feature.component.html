@@ -1,0 +1,9 @@
+<ActionBar class="action-bar"  title="Featured"></ActionBar>
+
+<ScrollView class="page">
+    <StackLayout class="home-panel">
+        <Label class="h1 text-center text-uppercase" text="FEATURED"></Label>
+        <Button class="btn btn-primary" text="Item" [nsRouterLink]="['../item']"></Button>
+        <Button class="btn btn-primary" text="Back" (tap)="goBack()" )></Button>
+    </StackLayout>
+</ScrollView>
