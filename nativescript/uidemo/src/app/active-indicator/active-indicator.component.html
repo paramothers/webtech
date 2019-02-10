@@ -1,0 +1,7 @@
+<StackLayout>
+    <Button row="0" text="Modify Busy Property" (tap)="(activeIndicator.busy = !activeIndicator.busy)"  class="btn btn-primary btn-active"></Button>
+    <Label #label (loaded)="animate(label)" text="{N}" color="white" width="40" height="40" textAlignment="center" backgroundColor="white" borderRadius="2" fontSize="16"></Label>
+
+    <ActivityIndicator row="1"  #activeIndicator busy="true" (busyChange)="onBusyChanged($event)" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+</StackLayout>
+

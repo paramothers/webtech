@@ -1,0 +1,10 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton>
+    <GridLayout rows="auto, auto" columns="*,*">
+        <Label text="Frame Per Scconds" textWrap="true" class="p-15" row="0" col="0"></Label>
+        <Label [text]="framePerSeconds" textWrap="true" class="p-15" row="0" col="1"></Label>
+        <Label text="Frame Per Minute" textWrap="true" class="p-15" row="1" col="0"></Label>
+        <Label [text]="framePerMinutes" textWrap="true" class="p-15" row="1" col="1"></Label>
+    </GridLayout>
+    <Button [text]="buttonText" class="btn btn-primary btn-active" (tap)="toggleEvent()"></Button>
+</StackLayout>
+
