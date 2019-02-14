@@ -1,0 +1,55 @@
+<ScrollView>
+    <StackLayout class="form">
+        <StackLayout class="input-field">
+            <Label class="label" text="Focus TextField" textWrap="true"></Label>
+            <TextField (loaded)="firstIfLoaded($event)" class="input input-border" hint="Text field focus" text=""></TextField>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="AutoCapitialization" textWrap="true" class="label"> </Label>
+            <TextField class="input input-border" #stf hint="all charactors" autocorrect="false" text="df" height="20" autocapitalizationType="allCharacters" ></TextField>
+            <TextField class="input input-border" #stf hint="none" autocorrect="false" text="" autocapitalizationType="none"></TextField>
+            <TextField class="input input-border" #stf hint="sentences" autocorrect="false" text="" autocapitalizationType="sentences"></TextField>
+            <TextField class="input input-border" #stf hint="words" autocorrect="false" text="" autocapitalizationType="words"> </TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <Label text="Passworld Type" textWrap="true" class="label"></Label>
+            <TextField class="input input-border" hint="Default" autocorrect="false" secure="true" text="" returnKeyType="next"> </TextField>
+            <TextField class="input-border input" hint="With text color" hintColor="#cc0000" color="#cc0000" autocorrect="true" text="" secure="true" returnKeyType="next"></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <Label text="Keyboard types" class="label" textWrap="true"></Label>
+            <TextField text="" class="input input-border" autocorrect="false" hint="done" returnKeyType="done"></TextField>
+            <TextField text="" class="input input-border" autocorrect="false" hint="go" returnKeyType="go"></TextField>
+            <TextField text="" class="input-border input" autocorrect="false" hint="next" returnKeyType="next"></TextField>
+            <TextField text="" class="input input-border" autocorrect="false" hint="searcg" returnKeyType="search"></TextField>
+            <TextField text="" class="input-border input" autocorrect="false" hint="send" returnKeyType="send" ></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <Label class="label" text="Setting Max text length(max 3 characters)" textWrap="true"></Label>
+            <TextField text="" class="input input-border" hint="With length" maxlength="3" returnKeyType="done"></TextField>
+            <TextField text="" class="input input-border" hint="With length" maxlength="3" returnKeyType="done" borderRadius="40"></TextField>
+            <TextField text="" class="input input-border" hint="With length" maxlength="3" returnKeyType="done" borderWidth="5" borderColor="#6666ff"></TextField>
+            <TextField text="" class="input input-border" hint="With length" maxlength="3" returnKeyType="done" style.placeholderColor="#0066cc"></TextField>
+            <TextField text="" class="input input-border" hint="With length with secure" maxlength="3" returnKeyType="done" secure="true"></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <Label text="Keyboard types" class="label" textWrap="true"></Label>
+            <TextField text="left" textAlignment="left" class="input input-border" (textChange)="onTextChange($event)" autocorrect="false" hint="done" returnKeyType="done" ></TextField>
+            <TextField text="center" textAlignment="center" class="input input-border" autocorrect="false" hint="go" returnKeyType="go"></TextField>
+            <TextField text="right"  textAlignment="right" class="input-border input" autocorrect="false" hint="next" returnKeyType="next"></TextField>
+            <TextField text="Font size " fontSize="24" class="font size" autocorrect="false" hint="searcg" returnKeyType="search"></TextField>
+            <TextField text="" class="input-border input" autocorrect="false" hint="send" returnKeyType="send" ></TextField>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="Date input" textWrap="true" class="label"></Label>
+            <TextField #dateField [text]="birthDate | date:'MM/dd/yy'" secure="false" returnKeyType="done"
+              (returnPress)="onRetrunPress($event)" maxlength="10" (focus)="onFocus($event)"  (blur)="onBlur($event)" class="input input-border"> </TextField>
+
+            <Button (tap)="onTap(dateField.text)" text="Tab on me" class="btn btn-primary btn-active"></Button>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<StackLayout>
+    <StackLayout class="form">
+
+        <Button [text]="buttonText" (tap)="toggleTextView()" class="btn-active btn btn-primary"></Button>
+        <Button text="Show Text" (tap)="showText()" class="btn-active btn btn-primary"></Button>
+        <StackLayout>
+            <Label text="Enter Text " class="label"></Label>
+            <TextView [(ngModel)]="textViewValue" hint="Enter soem text" [editable]="editableStage" class="input input-border ">
+
+            </TextView>
+        </StackLayout>
+
+    </StackLayout>
+</StackLayout>

@@ -1,0 +1,16 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton>
+     <StackLayout>
+         <SearchBar hint="Search here" [text]="searchPhrase"
+                    (textChange)="onTextChanged($event)"
+                    (submit)="onSubmit($event)"
+                    (clear)="onClear($event)"
+         color="white" textFieldBackgroundColor="red" textFieldHintColor="#006400"></SearchBar>
+         <ListView [items]="myItems" class="list-group">
+             <ng-template let-item="item">
+                <GridLayout class="list-group-item">
+                    <Label [text]="item.name" class="list-group-item-heading"></Label>
+                </GridLayout>
+             </ng-template>
+         </ListView>
+     </StackLayout>
+</StackLayout>

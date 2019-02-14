@@ -1,0 +1,12 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton>
+    <GridLayout>
+      <ListView [items] = "countries" (itemTap)="onItemTab($event)" class="list-group">
+          <ng-template let-country="item" let-i="index" let-odd="odd" let-even="even">
+            <StackLayout orientation="vertical" class="list-group-item">
+               <label text="Country: " textWrap="true"></label>
+                <Label [text]="country.name" ></Label>
+            </StackLayout>
+          </ng-template>
+      </ListView>
+    </GridLayout>
+</StackLayout>

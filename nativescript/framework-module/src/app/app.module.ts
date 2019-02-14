@@ -13,6 +13,27 @@ import {MyHttpService} from "~/app/http-api/my-http.service";
 import {NativeScriptHttpClientModule} from "nativescript-angular/http-client";
 import { PlatformComponent } from './platform/platform.component';
 import { MyTraceComponent } from './my-trace/my-trace.component';
+import { MyHtmlViewComponent } from './my-html-view/my-html-view.component';
+import { MyImageComponent } from './my-image/my-image.component';
+import { MyListPickerComponent } from './my-list-picker/my-list-picker.component';
+import {MyGestureComponent} from "~/app/my-gesture/my-gesture.component";
+import { MyIceIconsComponent } from './my-ice-icons/my-ice-icons.component';
+import { MyListViewComponent } from './my-list-view/my-list-view.component';
+import { MyCustomListViewComponent } from './my-custom-list-view/my-custom-list-view.component';
+import { MyProgresComponent } from './my-progres/my-progres.component';
+import { MySearchbarComponent } from './my-searchbar/my-searchbar.component';
+import { MySliderComponent } from './my-slider/my-slider.component';
+import { MySwitchComponent } from './my-switch/my-switch.component';
+import { MySegmentedBarComponent } from './my-segmented-bar/my-segmented-bar.component';
+import { MyWebviewComponent } from './my-webview/my-webview.component';
+import { MyTextViewComponent } from './my-text-view/my-text-view.component';
+import {MyTextFieldComponent} from "~/app/my-text-field/my-text-field.component";
+import { MyTimePickerComponent } from './my-time-picker/my-time-picker.component';
+import {
+    IfAndroidDirective,
+    IfIosDirective,
+    MyCustomDirectiveComponent
+} from './my-custom-directive/my-custom-directive.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -38,7 +59,28 @@ import { MyTraceComponent } from './my-trace/my-trace.component';
         FramePerSecondComponent,
         HttpApiComponent,
         PlatformComponent,
-        MyTraceComponent
+        MyTraceComponent,
+        MyHtmlViewComponent,
+        MyImageComponent,
+        MyListPickerComponent,
+        MyGestureComponent,
+        MyIceIconsComponent,
+        MyListPickerComponent,
+        MyListViewComponent,
+        MyCustomListViewComponent,
+        MyProgresComponent,
+        MySearchbarComponent,
+        MySliderComponent,
+        MySwitchComponent,
+        MySegmentedBarComponent,
+        MyWebviewComponent,
+        MyTextViewComponent,
+        MyTextFieldComponent,
+        MyTimePickerComponent,
+        MyCustomDirectiveComponent,
+        IfIosDirective,
+        IfAndroidDirective
+
     ],
     providers: [MyHttpService],
     schemas: [

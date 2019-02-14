@@ -1,0 +1,5 @@
+<FlexboxLayout flexDirection="column" sdkExampleTitle sdkToggleNavButton>
+    <Label text="Pick a pokeman" textWrap="true" class="h3 p-15 text-left"></Label>
+    <ListPicker [items]="pokemans" selectedIndex="0" (selectedIndexChange)="onSelectedIndexedChange($event)" class="p-15"></ListPicker>
+    <Label [text]="'Selected Pokman '+picked" textWrap="true" class="p-15"></Label>
+</FlexboxLayout>

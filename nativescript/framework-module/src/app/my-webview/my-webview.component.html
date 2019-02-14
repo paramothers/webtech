@@ -1,0 +1,20 @@
+<ScrollView>
+    <StackLayout >
+
+
+        <StackLayout row="0" class="form">
+
+            <Button class="btn btn-primary btn-active icon" text="Back" (tap)="goBack()"></Button>
+            <TextField #urlField  hint="Enter URL" [text]="webviewSrc" returnKeyType="done" (returnPress)="submit(urlField.text)"
+                       autocorrect="false" verticalAlignment="center" class="input input-border m-t-0" autocapitalizationType="none"></TextField>
+            <Button class="btn btn-primary btn-active icon" [isEnabled]="isEnabled"  text="Forward" (tap)="goForward()"></Button>
+        </StackLayout>
+
+
+
+        <WebView  #myWebView [src]="webviewSrc" ></WebView>
+        <Label  #labelResult></Label>
+    </StackLayout>
+
+</ScrollView>
+
