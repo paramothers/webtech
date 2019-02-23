@@ -1,0 +1,23 @@
+{
+  "name": "rxjs-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/first.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "scripts": {
+    "build-ts": "tsc",
+    "start": "npm run serve",
+    "serve": "node dist/first.js",
+    "watch-node": "nodemon dist/first.js",
+    "watch-ts": "tsc -w"
+  },
+  "dependencies": {
+    "rxjs": "^5.5.12"
+  }
+}
