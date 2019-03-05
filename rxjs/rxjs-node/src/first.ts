@@ -4,9 +4,14 @@ import {InifiniteObservable} from './2nd/observable-infinite';
 import {FilterPredicate} from './3rd/filter-predicate';
 import {MapOperator} from './3rd/map-simple';
 import {ReduceAccumator} from './3rd/reduce-accumator';
+import {MyTimer} from './4th/my-timer';
+import {TimeoutOperator} from './4th/timeout-operator';
+import {MergeDemo} from './5th/merge-demo';
 import {CustomeForeach} from './functional/ch2/custome-foreach';
 import {Higherorder} from './higherorder';
 import {Possiblities} from './SingleValue';
+import { ConcatDemo } from './5th/concat-demo';
+import { FlatternOperator } from './5th/flattern-oper';
 
 const observable = Observable.create((observer: any) => {
     observer.next('Hello World!');
@@ -17,7 +22,7 @@ const observable = Observable.create((observer: any) => {
 observable.subscribe(
     (x: any) => logItem(x),
     (error: any) => logItem('Error: ' + error),
-    () => logItem('Completed')
+    () => logItem('Completed'),
 );
 
 function logItem(val: any) {
@@ -46,9 +51,28 @@ function logItem(val: any) {
 // const filterObject = new FilterPredicate();
 // filterObject.filterObject();
 
-const customForEach = new CustomeForeach();
-// customForEach.simple();
-customForEach.testStringFunction();
+// const customForEach = new CustomeForeach();
+// // customForEach.simple();
+// customForEach.testStringFunction();
+//
+// const reduceAccumator = new ReduceAccumator();
+// reduceAccumator.scanObjects();
 
-const reduceAccumator = new ReduceAccumator();
-reduceAccumator.scanObjects();
+// const timeoutOperator: TimeoutOperator = new TimeoutOperator();
+// timeoutOperator.simple();
+// timeoutOperator.builtin();
+
+// const mytimer = new MyTimer();
+// mytimer.progationProblem();
+
+// let fileToTest = require('./javascript/simplefunction');
+// fileToTest();
+
+// let mergeDemo  = new MergeDemo();
+// mergeDemo.simple();
+
+// let concatDemo = new ConcatDemo();
+// concatDemo.simple();
+
+let flatternOperator = new FlatternOperator();
+flatternOperator.arraySample();

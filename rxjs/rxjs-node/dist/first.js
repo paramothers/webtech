@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const rxjs_1 = require("rxjs");
-const reduce_accumator_1 = require("./3rd/reduce-accumator");
-const custome_foreach_1 = require("./functional/ch2/custome-foreach");
+const flattern_oper_1 = require("./5th/flattern-oper");
 const observable = rxjs_1.Observable.create((observer) => {
     observer.next('Hello World!');
     observer.next('Hello Again!');
@@ -28,9 +27,23 @@ function logItem(val) {
 // filterDemo.filter();
 // const filterObject = new FilterPredicate();
 // filterObject.filterObject();
-const customForEach = new custome_foreach_1.CustomeForeach();
-// customForEach.simple();
-customForEach.testStringFunction();
-const reduceAccumator = new reduce_accumator_1.ReduceAccumator();
-reduceAccumator.scanObjects();
+// const customForEach = new CustomeForeach();
+// // customForEach.simple();
+// customForEach.testStringFunction();
+//
+// const reduceAccumator = new ReduceAccumator();
+// reduceAccumator.scanObjects();
+// const timeoutOperator: TimeoutOperator = new TimeoutOperator();
+// timeoutOperator.simple();
+// timeoutOperator.builtin();
+// const mytimer = new MyTimer();
+// mytimer.progationProblem();
+// let fileToTest = require('./javascript/simplefunction');
+// fileToTest();
+// let mergeDemo  = new MergeDemo();
+// mergeDemo.simple();
+// let concatDemo = new ConcatDemo();
+// concatDemo.simple();
+let flatternOperator = new flattern_oper_1.FlatternOperator();
+flatternOperator.arraySample();
 //# sourceMappingURL=first.js.map

@@ -18,6 +18,7 @@
     "watch-ts": "tsc -w"
   },
   "dependencies": {
+    "ramda": "^0.26.1",
     "rxjs": "^5.5.12"
   }
 }
