@@ -12,6 +12,7 @@ export function exploreMath() {
     console.log(Math.max(2,4,6,7));
     console.log(Math.min(2,4,6,7));
     
+    console.log(typeof (2>3));
     
     
 }
