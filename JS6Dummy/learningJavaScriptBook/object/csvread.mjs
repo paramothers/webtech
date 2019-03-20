@@ -4,29 +4,51 @@ const productsCSV = `name, category, price 12 Klingon Letter Opener, Office Warf
 
 const trim = s => s.match(/\W*(.+)\W*/)[1];
 
-const processCSV = (productsCSV) => {
-
-   return productsCSV.split("\n")
+const processCSV = productsCSV => {
+  return productsCSV
+    .split("\n")
     .slice(1)
-    .map(trim);
-}
+    .map(s => s.split(", "))
+    .map(converToObjectByDestructuring);
+   
+};
 
-const convertObject = (productArray) => {
+const converToObjectByDestructuring = ([name, category, price]) =>
+  objectDestructing({
+    name,
+    category,
+    price
+  });
 
-    productArray.map( (eachProduct) => {
+const convertObject = productArray => {
+  productArray.map(eachProduct => {
+    let [name, product, category] = eachProduct.split(",");
+    let productObject = {
+      name,
+      product,
+      category
+    };
 
-        let product = eachProduct.split(",");
-        let productObject = {
-            name: product[0],
-            category: product[1],
-            price: product[2],
-        }
-        
-        console.dir(productObject);
-    });
-}
+    const {name, ...elseKey} = productObject;
+    const myObject = {
+        a: 1,
+        ...elseKey
+    }
+    console.dir(productObject);
+  });
+};
+
+const objectDestructing = ({name, price}) => {
+  console.log(`Parithi: Product ${name} and its price ${price}`);
+};
+
+
+
+const objectDestructing2 = (product) => {
+    const { name, price } = product;
+    console.log(`Pa vakab: Product ${name} and its price ${price}`);
+  };
 
 export const parseCSV = () => {
-
-    convertObject(processCSV(productsCSV));
-} 
+  processCSV(productsCSV);
+};

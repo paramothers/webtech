@@ -7,7 +7,15 @@ import {reduceExplore,myArray,myArrayFunctions, arrayReferenceFunction, sortingP
 import {someFunction, secondFunction} from './array/array-functional';
 import {myTimes, testRestParameter} from './times/times';
 import {simpleObject} from './object/objectDemo';
-import {parseCSV} from './object/csvread';
+import {callMyEveryFunction} from './functional/myevery';
+
+import {callMySomeFunction} from './functional/mysome';
+import {testTapFunction} from './functional/mytap';
+import {myUnary} from './functional/myunary';
+import {onceDemo, demo, myObjectAssign} from './functional/myoncd';
+import {arrayUtils} from './functional/myForEach';
+import {verdicDemo, curriedDemo, demoCurriedMult} from './partial/verdic';
+import {emptyString} from './string/stringapi';
 
 // outerFunction("paramasivam");
 // secondFunction();
@@ -62,5 +70,22 @@ import {parseCSV} from './object/csvread';
 // myTimes();
 // testRestParameter();
 // simpleObject();
-parseCSV();
+// parseCSV();
+
+// callMyEveryFunction();
+// callMySomeFunction();
+// testTapFunction();
+// myUnary();
+// onceDemo();
+// demo();
+// myObjectAssign();
+// arrayUtils.demoMyMap();
+// arrayUtils.demoMyForEach();
+// arrayUtils.doMyObjectDeStructiong();
+// console.log(arrayUtils.typeofDemo());
+// console.log(arrayUtils.myReduceDemo());
+// verdicDemo();
+// curriedDemo();
+// demoCurriedMult();
+emptyString();
 

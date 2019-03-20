@@ -37,3 +37,15 @@ export const printName = (firstName, secondName) => {
 }
 
 export const calculateBalance = (principle, interest) => principle * interest
+
+export const emptyString = () => {
+
+  console.log(typeof "");
+  
+}
+
+const addCall = (a,b) => a + b;
+
+console.log(`Addiont of 1 ,3 are ${addCall(2,5)}`);
+
+
