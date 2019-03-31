@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div onclick="alert('hai param')">Cliek me</div>
+        <div>Hi Padhu</div>
+
+        <script>
+          let myDiv = document.getElementsByTagName('div')[1];
+          myDiv.onclick = function(e){
+              alert('hai parithi');
+              e.stopPropagation();
+          }
+
+         /*  myDiv.addEventListener('click', function(){
+              alert('foo.');
+          }, false); */
+
+         /*  myDiv.addEventListener('click', function(){
+              console.log.bind(console);
+          }, false); */
+
+          document.addEventListener("click", () => alert('document clicked'), false);
+          document.body.addEventListener('click', () => alert('body clicked'), false);
+          window.addEventListener('click',() => alert('window clicked'), false);
+
+          function myCallback(event){
+
+            event = event || window.event;
+            target = event.target || event.srcElement;
+            console.log(target.nodeName);
+          }
+
+          if(documenet.addEventListener){
+             document.addEventListener('click',myCallback, false )
+          }else if(document.attachEvent){
+             document.attachEvent('onclick',myCallback)
+          }else{
+              document.onclick = myCallback;
+          }
+        </script>
+
+        <ul>
+            <li><a href="https://www.yahoo.com">my blog</a></li>
+        </ul>
+    </body>
+</html>
