@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head> </head>
 
-    </head>
+  <body>
+    <div onclick="alert('hai param')">Cliek me</div>
+    <div>Hi Padhu</div>
 
-    <body>
-        <div onclick="alert('hai param')">Cliek me</div>
-        <div>Hi Padhu</div>
+    <script>
+       let myDiv = document.getElementsByTagName('div')[1];
+       myDiv.onclick = function(e){
+           alert('hai parithi');
+           e.stopPropagation();
+       }
 
-        <script>
-          let myDiv = document.getElementsByTagName('div')[1];
-          myDiv.onclick = function(e){
-              alert('hai parithi');
-              e.stopPropagation();
-          }
+      /*  myDiv.addEventListener('click', function(){
+           alert('foo.');
+       }, false); */
 
-         /*  myDiv.addEventListener('click', function(){
-              alert('foo.');
-          }, false); */
+      /*  myDiv.addEventListener('click', function(){
+           console.log.bind(console);
+       }, false); */
 
-         /*  myDiv.addEventListener('click', function(){
-              console.log.bind(console);
-          }, false); */
+       document.addEventListener("click", () => alert('document clicked'), false);
+       document.body.addEventListener('click', () => alert('body clicked'), false);
+       window.addEventListener('click',() => alert('window clicked'), false);
 
-          document.addEventListener("click", () => alert('document clicked'), false);
-          document.body.addEventListener('click', () => alert('body clicked'), false);
-          window.addEventListener('click',() => alert('window clicked'), false);
+       function myCallback(event){
 
-          function myCallback(event){
+         event = event || window.event;
+         target = event.target || event.srcElement;
+         console.log(target.nodeName);
+       }
 
-            event = event || window.event;
-            target = event.target || event.srcElement;
-            console.log(target.nodeName);
-          }
+       if(document.addEventListener){
+          document.addEventListener('click',myCallback, false )
+       }else if(document.attachEvent){
+          document.attachEvent('onclick',myCallback)
+       }else{
+           document.onclick = myCallback;
+       }
 
-          if(documenet.addEventListener){
-             document.addEventListener('click',myCallback, false )
-          }else if(document.attachEvent){
-             document.attachEvent('onclick',myCallback)
-          }else{
-              document.onclick = myCallback;
-          }
-        </script>
+       function myXhrCallBack(myxhr){
 
-        <ul>
-            <li><a href="https://www.yahoo.com">my blog</a></li>
-        </ul>
-    </body>
+         if(myxhr.readyState === 4){
+
+             console.log(myxhr.status);
+             if(myxhr.status === 200){
+
+                 console.log(myxhr.responseText);
+             }
+         }
+
+       }
+       var xhr = new XMLHttpRequest();
+       xhr.onreadystatechange =  (function (myxhr){
+
+         return function(){
+            myXhrCallBack(myxhr);
+         }
+       }(xhr));
+
+       xhr.open('GET', 'simple.txt',true);
+
+       xhr.send('');
+    </script>
+
+    <ul>
+      <li><a href="https://www.yahoo.com">my blog</a></li>
+    </ul>
+  </body>
 </html>
