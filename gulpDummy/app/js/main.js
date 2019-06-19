@@ -1,1 +1,2 @@
-console.log("I'm logging from the main.js file.");
+console.log("I'm as from the main.js file.");
+var hai;

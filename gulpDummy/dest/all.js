@@ -1,0 +1,1 @@
+var hai;console.log("I'm as from the main.js file."),console.log("I'm logging from the secondary.js file.");

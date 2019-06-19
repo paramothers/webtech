@@ -1,0 +1,12 @@
+:root {
+  /* Colors */
+  --red: #f05d5d;
+  --green: #59c946;
+  --blue: #6f7af1;
+  --white: #ffffff;
+  --grey: #eeeeee;
+  --black: #000000; }
+
+body {
+  font: 300 16px sans-serif;
+  background: var(--grey); }
