@@ -9,6 +9,9 @@ const PATHS = {
 };
 
 const productionConfig = merge([
+
+  parts.clean(PATHS.build),
+  parts.minifyJS(),
   parts.extractCSS({use: [
     "css-loader",
     parts.autoprefix()
@@ -33,7 +36,8 @@ const commonConfig = merge([
   {
     entry: {
       app: PATHS.app,
-      style: PATHS.style
+      style: PATHS.style,
+      vendor: ["react"],
     },
     output: {
       path: PATHS.build,
@@ -42,7 +46,10 @@ const commonConfig = merge([
     plugins: [
       new HtmlWebpackPlugin({
         title: "Webpack Demo"
-      })
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name:"vendor",
+      }),
     ]
   },
   parts.listJavaScript({

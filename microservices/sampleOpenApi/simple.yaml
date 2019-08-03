@@ -1,0 +1,192 @@
+openapi: "3.0.0"
+info:
+  title: "Sample API"
+  description: "this is sample yaml"
+  version: "2.3"
+  termsOfService: "http://somehost.com"
+  contact:
+    name: "ParamTeam"
+    url: "http://simple.com"
+    email: "param@wipro.com"
+  license:
+    name: "Param license"
+servers:
+  - url: http://google.com
+    description: "dev environment"
+  - url: http://yahoo.com
+    description: "QA environment"
+  - url: http://prod.com
+    description: "Prod environment"
+paths:
+  '/simple/user':
+    post:
+      tags:
+      - ab
+      summary: "this is to get user detail dffsfsd"
+      description: "based on given filter criteria, it will fetch based on given filter criteria, it will fetch based on given filter criteria, it will fetch based on given filter criteria, it will fetch based on given filter criteria, it will fetch "
+      operationId: '/user'
+      parameters:
+        - name: age
+          in: header
+          description: "user age"
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: "**City name**. *Example: London*. You can call by city name, or by city name and country code. The API responds with a list of results that match a searching word. For the query value, type the city name and optionally the country code divided by a comma; use ISO 3166 country codes."
+          schema:
+            type: string
+        - name: id
+          in: query
+          description: "**City ID**. *Example: `2172797`*. You can call by city ID. The API responds with the exact result. The List of city IDs can be downloaded [here](http://bulk.openweathermap.org/sample/). You can include multiple cities in this parameter &mdash; just separate them by commas. The limit of locations is 20. *Note: A single ID counts as a one API call. So, if you have city IDs, it's treated as 3 API calls.*"
+          schema:
+            type: string
+        - name: lat
+          in: query
+          description: "**Latitude**. *Example: 35*. The latitude coordinate of the location of your interest. Must use with `lon`."
+          schema:
+            type: string
+        - name: lon
+          in: query
+          description: "**Longitude**. *Example: 139*. Longitude coordinate of the location of your interest. Must use with `lat`."
+          schema:
+            type: string
+        - $ref: '#/components/parameters/units'
+        - $ref: '#/components/parameters/lang'
+        - $ref: '#/components/parameters/mode'
+        - $ref: '#/components/parameters/zip'
+      security:
+        - some_other_key: []
+      
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200'
+        404:
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Weather not found
+                type: string
+                example: Not found
+components:
+  schemas:
+    200:
+      title: successful response
+      type: object
+      properties:
+        coord: 
+          $ref: '#/components/schemas/Coord'
+        weather:
+          type: array
+          description: list of weather details
+          items: 
+            $ref: '#/components/schemas/Weather' 
+        base:
+          type: string
+          description: internal parameter
+          example: cms sttation
+        main: 
+          $ref: '#/components/schemas/Main' 
+        wind:
+          $ref: '#/components/schemas/Wind'        
+    Weather:
+      title: Weather
+      type: object
+      properties:
+        id: 
+          type: integer
+          description: weather condition id
+          format: int32
+          example: 803
+        main:
+          type: string
+          description: Group of weather
+          example: india
+        icon:
+          type: string
+          description: icon of the location
+          example: excelicon.gif
+    Coord:
+      title: Coord
+      type: object
+      properties:
+        lon: 
+          type: number
+          description: City geo location
+          example: 145.999
+        lat:
+          type: number
+          description: city geo location
+          example: 12.54
+    Main:
+      title: Main
+      type: object
+      properties:
+        temp: 
+          type: number
+          description: Temperature
+          example: 293.24
+        pressure:
+          type: integer
+          description: Atmospheric pressure
+          format: int32
+          example: 1019
+    Wind:
+      title: wind
+      type: object
+      properties:
+        speed:
+          type: number
+          description: Wind speed
+          example: 5.023
+  parameters:
+    lang:
+      name: lang
+      in: query
+      schema:
+        type: string
+    mode: 
+      name: mode
+      in: query
+      description: "**Mode**. *Example: html*. Determines the format of the response. Possible values are `xml` and `html`. If the mode parameter is empty, the format is `json` by default."
+      schema:
+        type: string
+        enum: [json, xml, html]
+        default: "json"
+    zip: 
+      name: zip
+      in: query
+      description: "**Zip code**. Search by zip code. *Example: 95050,us*. Please note that if the country is not specified, the search uses USA as a default."
+      schema:
+        type: string
+    units:
+      name: units
+      in: query
+      description: "Example of possible value **sun**, **mon**, **tue**"
+      example: mon
+      schema:
+        type: string
+        enum: [sun, mon, tue]
+        default: "tue"
+  securitySchemes:
+      app_id:
+        type: apiKey
+        description: API key to authorize requests.If you don't have an OpenWeatherMap API key, use `fd4698c940c6d1da602a70ac34f0b147`.
+        name: appid
+        in: query
+security:
+  - app_id: []
+tags:
+  - name: Current Weather Data
+    description: summa...summa
+  - name: Previous Weather Data
+    description: summa...summa
+externalDocs:
+  url: https://www.google.com
+  description: Go to the google yourself.
+  

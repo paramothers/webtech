@@ -1,4 +1,21 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const BabiliPlugin = require("babili-webpack-plugin");
+
+exports. minifyJS = () => ({
+  plugins:[
+    new BabiliPlugin(),
+  ]
+});
+exports.generateSourceMaps = ({type}) => ({
+  devtool:type,
+});
+
+exports.clean = (path) = ({
+  plugins:[
+    new CleanWebpackPlugin([path]),
+  ]
+});
 
 exports.autoprefix = () => ({
   loader: "postcss-loader",
