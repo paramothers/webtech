@@ -9,7 +9,9 @@ const filePath =
   "E:\\param\\git\\webtech\\nodejsDummy\\notes-node\\greet56ing.txt";
 let userInfo = os.userInfo();
 // console.log(userInfo);
-let fileContent = `Param id: ${userInfo.username} and ${notes.age}`
+let fileContent = `Param id: ${userInfo.username} and ${notes.age}`;
+
+let filteredArray = _.uniq(['param','pavalan','param','parithi','parithi']);
 
 fs.appendFile(filePath, fileContent, err => {
   if (err) {
@@ -23,3 +25,6 @@ console.log(notes.addNote());
 
 console.log(_.isString(true));
 console.log(_.isString("param"));
+
+console.log(`filtered array ${filteredArray}`);
+
