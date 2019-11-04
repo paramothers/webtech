@@ -6,6 +6,7 @@ import { DataType } from '../data/Types';
 import { Shop } from './shop';
 import { addToCart, updateCartQuantity, removeFromCart, clearCart } from '../data/CartActionCreators';
 import { CartDetails } from './CartDetails';
+import { DataGetter } from "../data/DataGetter";
 
 const mapStateToProps = (dataStore) => ({
     ...dataStore
@@ -29,23 +30,24 @@ export const ShopConnector = connect(mapStateToProps, mapDispatchToProps)(
     class extends Component {
         render() {
             return <Switch>
-                <Route path="/shop/products/:category?"
+                <Redirect from="/shop/products/:category" to="/shop/products/:category/1" exact={true} />
+                <Route path={"/shop/products/:category/:page"}
                     render={
-                        (routeProps) =>
-                            <Shop {...this.props} {...routeProps}
-                                products={filterProducts(this.props.products,
-                                    routeProps.match.params.category)} />
-                    } />
+                    (routeProps) =>
+                        <DataGetter {...this.props} {...routeProps}>
+                            <Shop {...this.props} {...routeProps} />
+                        </DataGetter>
+                } />
                 <Route path="/shop/cart"
                     render={(routeProps) => <CartDetails {...this.props} {...routeProps} />} />
-                <Redirect to="/shop/products" />
+                <Redirect to="/shop/products/all/1" />
             </Switch >
         }
 
         componentDidMount() {
 
             this.props.loadData(DataType.CATEGORIES);
-            this.props.loadData(DataType.PRODUCTS);
+            // this.props.loadData(DataType.PRODUCTS);
         }
     }
 )      

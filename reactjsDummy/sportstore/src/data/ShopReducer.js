@@ -5,8 +5,13 @@ export const ShopReducer = (storeData, action) => {
     case ActionTypes.DATA_LOAD:
       return {
         ...storeData,
-        [action.payload.dataType]: action.payload.data
+        [action.payload.dataType]: action.payload.data,
+        [`${action.payload.dataType}_total`]: action.payload.total,
+        [`${action.payload.dataType}_params`]: action.payload.params
       };
+    
+    case ActionTypes.DATA_SET_PAGESIZE:
+           
      default:
          return storeData || {}; 
   }
