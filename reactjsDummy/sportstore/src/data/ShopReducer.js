@@ -1,4 +1,4 @@
-import { ActionTypes } from "./Types";
+import { ActionTypes, DataType } from "./Types";
 
 export const ShopReducer = (storeData, action) => {
   switch (action.type) {
@@ -11,7 +11,15 @@ export const ShopReducer = (storeData, action) => {
       };
     
     case ActionTypes.DATA_SET_PAGESIZE:
-           
+       return {...storeData, pageSize: action.payload}
+    case ActionTypes.DATA_SET_SORT_PROPERTY:
+       return {...storeData, sortKey: action.payload}
+    
+    case ActionTypes.DATA_STORE:
+       if(action.payload.dataType === DataType.ORDERS){
+          return {...storeData, order: action.payload.data}
+       }
+       break;           
      default:
          return storeData || {}; 
   }
