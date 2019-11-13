@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable*/
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from "react";
+import "./App.css";
+import {Display} from "./Display";
+
+let name = "Admin";
+const city = "Chennai";
+//eslint-disable-next-line
+let error = "thsi is";
+export default class App extends Component {
+
+  constructor(props){
+             
+    super(props);
+    this.state = {
+      city:"London"
+    }
+  }
+  changeCity = () => {
+    debugger;
+    this.setState({city: this.state.city === "London"? "New yark": "London"})
+  }
+
+  message = () => `Hellow ${name} from ${city}`;
+  render(){
+    return (
+      <Display value={this.state.city} callback={this.changeCity}/>
+    )
+  }
 }
-
-export default App;
