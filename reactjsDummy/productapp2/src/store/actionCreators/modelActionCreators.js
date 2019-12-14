@@ -25,6 +25,7 @@ export const deleteSupplier = (supplier) => ({
 
 const createSaveEvent = (dataType, payload)  => {
 
+    console.log("payload ",payload, dataType);
     if(!payload.id){
         return {
             type: STORE,
@@ -32,6 +33,7 @@ const createSaveEvent = (dataType, payload)  => {
             payload: {...payload, id: idCounter++}
         }
     }else {
+        console.log("updated ",payload, dataType);
         return {
             type: UPDATE,
             dataType: dataType,

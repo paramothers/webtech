@@ -12,10 +12,12 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all --parallel reactstart json",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "reactstart": "react-scripts start",
+    "json": "json-server --p 3500 -r src/api.routes.json src/store/restData.js"
   },
   "eslintConfig": {
     "extends": "react-app"

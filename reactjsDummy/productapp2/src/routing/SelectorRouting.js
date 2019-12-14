@@ -6,16 +6,39 @@ import {
   Route,
   Switch,
   Redirect, 
-  withRouter
+  withRouter,
+  Prompt
 } from "react-router-dom";
 import { ProductDisplay } from "../product/ProductDisplay";
 import { SupplierDisplay } from "../supplier/SupplierDisplay";
 import {RouteInfo} from "../routing/RouteInfo";
 import {ToggleLink} from "../routing/ToggleLink";
+import {CustomPrompt} from "../routing/CustomPrompt";
 
 const RouteInfoHOC = withRouter(RouteInfo);
 
 export class Selector extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      showPrompt: false,
+      message: "",
+      callback: () =>{}
+    }
+  }
+
+  customGetUserConfirmation = (message, navCallback) => {
+    this.setState({
+      showPrompt: true,
+      message: message,
+      callback: (allow) => {
+        navCallback(allow);
+        this.setState({showPrompt: false})
+      }
+    })
+  }
+
   renderMessage = msg => <h5 className="bg-info text-white m-2 p-2">{msg}</h5>;
 
   render(){
@@ -23,7 +46,7 @@ export class Selector extends Component {
      * the first column of <div> are rendered programatically based routing system
      * second, part of <Route> are rendred declarativly
      */
-    return <Router>
+    return <Router getUserConfirmation={ this.customGetUserConfirmation}>
         <div className="container-fluid">
             <div className="row">
        
@@ -35,6 +58,10 @@ export class Selector extends Component {
                     <ToggleLink className="m-2 btn btn-block btn-primary" activeClassName="active" to="/info">All Info</ToggleLink>
                 </div>
                 <div className="col">
+                   <CustomPrompt show={this.state.showPrompt}
+                   message={this.state.message}
+                   callback={this.state.callback} />
+                  <Prompt message={ (loc) => `Do you want to navigate to ${loc.pathname}`} />
                     <RouteInfoHOC />
                     <Switch>
                         <Route path="/products" component={ProductDisplay} />

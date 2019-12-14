@@ -2,6 +2,7 @@ import {STORE,UPDATE,DELETE} from "../modelActionTypes";
 import {initialData} from "../initialData";
 
 export default function(storeData, action){
+    console.log("action type ",action.dataType);
     switch(action.type){
         case STORE:
             return {

@@ -4,7 +4,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import dataStore, { deleteProduct } from "./store";
 // import { Selector } from "./common/Selector";
-import {Selector} from "./routing/SelectorRouting"
+import {Selector} from "./routing/RouteGenerate";
 import { ProductDisplay } from "./product/ProductDisplay";
 import { SupplierDisplay } from "./supplier/SupplierDisplay";
 import { StoreAccess } from "./store/StoreAccess";
@@ -12,6 +12,7 @@ import { StoreAccess } from "./store/StoreAccess";
 import {CustomConnector, CustomConnectorProvider} from "./store/connectors/CustomConnector";
 import {startEditingProduct} from "./store/actionCreators/stateActionsCreators";
 import {ProductTable} from "./product/ProductTable";
+import { PRODUCTS, SUPPLIERS } from "./store/dataTypes";
 
 const selectors = {
   products: (store) => store.modelData.products
@@ -28,8 +29,8 @@ export default class App extends Component {
   render(){
     return <Provider store={dataStore}>
       <Selector>
-        <ProductDisplay  name="Products" />
-        <SupplierDisplay name="Suppliers" />
+        <data  name="Products"  datatype={PRODUCTS}/>
+        <data  name="Suppliers" datatype={SUPPLIERS}/>
       </Selector>
     </Provider>
   }
