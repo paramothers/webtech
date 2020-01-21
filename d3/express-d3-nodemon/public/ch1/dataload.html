@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="d3.js"></script>
+  </head>
+
+  <body>
+    <p>Hi Pavalan</p>
+    <script>
+     /*  d3.csv("cities.csv", (data) => {
+        if (data) {
+        //   console.log("error:", error);
+          dataViz(data);
+
+          
+        } else {
+          console.log(d3.min(data, e => +e.population));
+          console.log(d3.max(data, e => +e.population));
+          console.log(d3.mean(data, e => +e.population));
+          console.log(d3.extent(data, el => +el.population)) ;
+        }
+      }); */
+       d3.json("tweets.json", data => {
+        console.log("tw.");
+        // console.log(data.tweets);
+       
+      });
+
+      /*  var testArray = [88, 10000, 1, 75, 12, 35];
+      console.log(d3.min(testArray, e => e));
+      console.log(d3.max(testArray, e => e));
+      console.log(d3.mean(testArray, e => e)); */
+
+      const dataViz = (data) => {
+        console.log("populating data ", data);
+        d3.select("body")
+            // .selectAll("div.cities")  
+            // .data([data]) 
+            // .enter()    
+            .append("div")
+            .attr("class","cities")
+            .html(data.label);
+      }
+    </script>
+  </body>
+</html>

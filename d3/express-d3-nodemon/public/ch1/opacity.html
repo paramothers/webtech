@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<svg>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="d3.js"></script>
+</head>
+<body>
+
+    <svg width="300" height="300">
+    </svg>
+     <script>
+      /* d3.select("svg")
+        .selectAll("rect")
+        .data([15,20,22,8,100,10])
+        .enter()
+        .append("rect")
+        .attr("width", 20)
+        .attr("height", d => d)
+        .style("opacity", 0.25)
+        .style("stroke","#9A8B7A")
+        .style("stroke-width", "2px")
+        .style("fill","red")
+        .attr("x", (d,i) => i * 20 +2)
+        .attr("y", (d) => 100 - d) */
+
+        var yScale = d3.scaleLinear().domain([0, 24500]).range([10,100]);
+        d3.select("svg")
+            .data([14, 68, 24500, 430, 19, 1000, 5555])
+            .enter()
+            .append("rect")
+            .attr("width",10)
+            .attr("height", d => yScale(d))
+            .attr("y", d => 100 - yScale(d))
+            .attr("x", (d, i) => ( i * 10 ) + 2)
+            .style("fill","red") 
+
+           /*  d3.select("svg")
+                .append("circle")
+                .attr("cx",10)
+                .attr("cy",10)
+                .attr("r",20)
+                .style("fill", "yellow") */
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="d3.js"></script>
+  </head>
+  <body>
+    <p>Hi param</p>
+    <p>Hi param</p>
+    <p>Hi Padmasankari</p>
+    <script>
+      let selection = d3
+        .selectAll("p")
+        .data([14, 18, 36, 53, 42, 67])
+        .style("font-size", d => d + "px");
+
+
+        // .style("color", (d, i) => (i % 2 ? "#fff" : "#eee"))
+        selection.enter()
+        .append("p")
+        .style("font-size", d => d + "px")
+        .text(d => "I am padhi " + d + " !");
+
+         selection.exit().remove();
+
+         d3.select("body")
+            .transition()
+            .style("background-color","orange")
+        
+         d3.csv("data/worldcup.csv")
+          .then( data => console.log(data))
+
+        //  let data = await d3.csv("data/worldcup.csv");
+        //  console.log(data)
+       
+        d3.json("data/tweets.json")
+          .then( data => console.log(data));
+    </script>
+  </body>
+</html>
