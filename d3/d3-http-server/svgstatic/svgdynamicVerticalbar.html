@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bar with vertical</title>
+    <script src="../d3.js"></script>
+  </head>
+  <body>
+    <style>
+      .chart rect {
+        fill: steelblue;
+      }
+
+      .chart text {
+        fill: white;
+        font: 10px sans-serif;
+        text-anchor: middle;
+      }
+    </style>
+    <svg class="chart"></svg>
+
+    <script>
+      let data = [23, 45, 69, 90, 23];
+      let svgWidth = 200;
+      let svgHeight = 300;
+      let barWidth = svgWidth / data.length;
+
+      let yScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(data)])
+        .range([svgHeight, 0]);
+
+      let svg = d3
+        .select(".chart")
+        .attr("width", svgWidth)
+        .attr("height", svgHeight);
+
+      let selections = svg
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+        .attr("transform", (d, i) => "translate(" + barWidth * i + ",0)");
+      selections
+        .append("rect")
+        .attr("width", barWidth - 1)
+        .attr("height", d => svgHeight - yScale(d))
+        .attr("y", d => yScale(d));
+      selections
+        .append("text")
+        .attr("y", d => yScale(d) + 3)
+        .attr("x", barWidth / 2)
+        .text(d => d)
+        .attr("dy", ".75em");
+    </script>
+  </body>
+</html>

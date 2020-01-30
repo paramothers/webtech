@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circles</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+
+     <svg width="720" height='320'>
+        <circle cx='40' cy = '60' r = '10'></circle>
+        <circle cx='80' cy='60' r = '11'></circle>
+        <circle cx='120' cy = '60' r = '12'></circle>
+     </svg>
+    
+    <script>
+
+        let data = [23, 35];
+
+        // d3.selectAll('circle')
+        //   .data(data)
+        //   .attr('fill','steelblue')
+        //   .attr('r', (d) => Math.sqrt(d))
+        //   .attr('cx', (d, i) => i * 100 + 30)
+
+        let circle = d3.selectAll('circle')
+                    .data(data)
+                    .attr('cx', (d, i) => i * 100 +30 )
+                    .attr('fill', 'steelblue')
+        
+                   // circle.exit().remove()
+        
+        let circleSelections = d3.selectAll('circle')
+                                .data(data)
+                                .exit()
+                                .transition()
+                                .attr('r',0)
+                                .remove()
+
+        
+    </script>
+</body>
+</html>

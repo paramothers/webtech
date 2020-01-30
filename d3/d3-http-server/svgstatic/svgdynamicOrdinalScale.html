@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orinal Scale</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+
+    <style>
+        .chart rect {
+            fill:steelblue;
+        }
+
+        .chart text {
+
+            fill: white;
+            font: 10px sans-serif;
+            text-anchor: middle;
+        }
+
+        .axis text {
+            font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .x.axis path {
+            display: none;
+        }
+    </style>
+    <svg class="chart"></svg>
+    <script>
+
+        let margin = {
+            top: 20,
+            right: 30,
+            bottom: 30,
+            left:40
+        }
+
+        let height = 500 - margin.top - margin.bottom;
+        let width = 960 - margin.left - margin.right;
+
+
+
+        let data = [
+            {
+                'name':'A',
+                'value':23
+            },
+            {
+                'name':'B',
+                'value':35
+            },
+            {
+                'name':'C',
+                'value':98
+            },
+            {
+                'name':'D',
+                'value':56
+            },
+        ]
+
+        let yScale = d3.scaleLinear()
+                        .range([height, 0])
+                        .domain([0, d3.max(data, d => d.value)])
+
+        let xScale = d3.scaleOrdinal()
+                        .range([0, width], .1)
+                        .domain(data.map( d => d.name))
+
+        let xAxis = d3.axisBottom()
+                      .scale(xScale);
+
+        let yAxis = d3.axisLeft()
+                        .scale(yScale);
+        
+        
+        let chart = d3.select('.chart')
+                    .attr('width', width + margin.left + margin.right)
+                    .attr('height', height + margin.top + margin.bottom)
+                    .append('g')
+                    .attr('transform', 'translate('+ margin.left+ ','+margin.top+')')
+        //X - axis
+        chart.append('g')
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + height + ')')
+            .call(xAxis);
+        
+        // y - axis
+        chart.append('g')
+            .attr('class', 'y axis')
+            .call(yAxis);
+
+        
+        chart.selectAll('.bar')
+             .data(data)
+             .enter()
+             .append('rect')
+             .attr('class', 'bar')
+             .attr('x', d => xScale(d.name))
+             .attr('y', d=> yScale( +d.value))
+             .attr('height', d => height - yScale( +d.value))
+             .attr('width', xScale.range())
+            
+        // let selections = chart.selectAll('g')
+        //                         .data(data)
+        //                         .enter()
+        //                         .append('g')
+        //                         .attr('transform', d => 'translate('+ xScale(d.name) +',0)');
+            
+                            
+/* 
+        selections.append('rect')
+                    .attr('y', d => d.value)
+                    .attr('height', d => height - yScale(d.value))
+                    .attr('width', xScale.rangeBand());
+
+        sselections.append('text')
+                    .attr('x', x.rangeBand() /2)
+                    .attr('y', d => yScale(d.value) + 3)
+                    .attr('dy', '.75em')
+                    .text(d => d.value) */
+        
+
+    
+    </script>
+    
+</body>
+</html>
