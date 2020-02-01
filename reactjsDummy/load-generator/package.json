@@ -19,7 +19,7 @@
   "scripts": {
     "start": "npm-run-all --parallel reactstart webservice",
     "reactstart":"react-scripts start",
-    "webservice":"nodemon src/server/server.js",
+    "webservice":"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

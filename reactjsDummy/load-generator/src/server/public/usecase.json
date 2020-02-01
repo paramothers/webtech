@@ -1,0 +1,19 @@
+{
+    "usecases": [
+        {
+            "name":"Execute dir command",
+            "script":"dir",
+            "type":"command"
+        },
+        {
+            "name":"Execute Python command",
+            "script":"dir",
+            "type":"python"
+        },
+        {
+            "name":"Execute Windows Batch file",
+            "script":"dir",
+            "type":"batch"
+        }
+    ]
+}
