@@ -1,4 +1,5 @@
 let express = require("express");
+let path = require('path');
 let listenerChildProcessEvents = require('./EventListeners.js')
 let app = express();
 
@@ -26,13 +27,14 @@ app.get("/execute", (req, res) => {
         break;
     case 'python' :
         console.log(`Given python-task is '${req.query.script}'`);
-        childProcess = spawn(req.query.script, {shell: true });
+        childProcess = spawn('E:/param/software/python381/python', [path.join( __dirname, "/scripts/"+req.query.script)], {shell: true });
         registerSTDIOStreams(childProcess, res);
         listenerChildProcessEvents(childProcess);
         break;
     case 'batch' :
         console.log(`Given batch-task is '${req.query.script}'`);
-        childProcess = spawn(req.query.script, {shell: true });
+        console.log('Bath file path >', path.join( __dirname, "/scripts/"+req.query.script));
+        childProcess = spawn('cmd.exe', ['/c', path.join( __dirname, "/scripts/"+req.query.script)], {shell: true });
         registerSTDIOStreams(childProcess, res);
         listenerChildProcessEvents(childProcess);
         break;

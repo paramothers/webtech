@@ -1,18 +1,21 @@
 {
     "usecases": [
         {
+            "id":1,
             "name":"Execute dir command",
             "script":"dir",
             "type":"command"
         },
         {
-            "name":"Execute Python command",
-            "script":"dir",
+            "id":2,
+            "name":"Execute Hellow Python command",
+            "script":"hello.py",
             "type":"python"
         },
         {
+            "id":3,
             "name":"Execute Windows Batch file",
-            "script":"dir",
+            "script":"simple.bat",
             "type":"batch"
         }
     ]

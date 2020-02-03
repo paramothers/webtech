@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bar chart with opacity</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='../d3.js'></script>
+</head>
+<body>
+    <svg>        
+    </svg>
+    <script>
+
+        let svgHight = 200;
+        let yScale = d3.scaleLinear()
+                        .domain([0, 100, 1000, 24500])
+                        .range([0, 50, 75, svgHight])
+        let data = [14, 68, 24500, 430, 19, 1000, 5555]
+        // let data = [23,45,78,25, 90]
+       let svg = d3.select('svg')
+                    .attr('width',400)
+                    .attr('height', svgHight);
+
+           d3.select('svg') 
+           .selectAll('rect')
+           .data(data)
+           .enter()
+           .append('rect')
+           .attr('width',8)
+           .attr('height', d => yScale(d))
+           .attr('opacity', 0.25)
+           .attr('x', (d,i) => (10 * i) + 2)
+           .attr('y', (d) => svgHight - yScale(d));
+    </script>
+</body>
+</html>

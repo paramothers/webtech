@@ -8,7 +8,8 @@ export default class PocContainer extends Component {
     super(props);
     this.state = {
       selectedUseCase: this.props.useCases[0],
-      serverOutput: null
+      serverOutput: null,
+      selectedUseCaseName:this.props.useCases[0].name
     };
   }
   render() {
@@ -16,7 +17,7 @@ export default class PocContainer extends Component {
       <div className="container" id="myPocContainer">
         <div className="row">
           <h2 className="col text-center" id="myUsecases">
-            Available Use Cases.
+            Available Use Cases
           </h2>
         </div>
 
@@ -24,9 +25,10 @@ export default class PocContainer extends Component {
           {this.props.useCases &&
             this.props.useCases.map(tempUseCase => (
               <UseCase
-                key={tempUseCase.name}
+                key={tempUseCase.id}
                 useCase={tempUseCase}
                 callback={this.setSelectedUseCase}
+                selectedUseCaseName={this.state.selectedUseCaseName}
               />
             ))}
         </div>
@@ -49,6 +51,7 @@ export default class PocContainer extends Component {
   //set current usecase by click
   setSelectedUseCase = useCase => {
     console.log("Selected Usecase ", useCase);
+    this.setState({ serverOutput: 'Please wait..', selectedUseCase: useCase, selectedUseCaseName: useCase.name});
     this.executeCommand(useCase);
   };
 

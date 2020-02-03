@@ -1,3 +1,2 @@
 ECHO OFF
-ECHO Hello World
-PAUSE
+ECHO Hello PAramasivam
