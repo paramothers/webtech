@@ -14,7 +14,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:4000/static/usecase.json").then(res => {
+    axios.get("http://localhost:4000/usecase.json").then(res => {
       const data = res.data;
       console.log("useCases from ", data);
       this.setState({ useCases: data.usecases });

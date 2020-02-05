@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "d3\\react-d3-2"
+		},
+		{
+			"path": "d3\\d3-http-server"
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Kimbie Dark"
+	}
+}

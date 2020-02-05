@@ -3,7 +3,7 @@ let path = require('path');
 let listenerChildProcessEvents = require('./EventListeners.js')
 let app = express();
 
-app.use("/static",express.static('public'))
+app.use(express.static('public'))
 
 app.get("/execute", (req, res) => {
 
@@ -15,8 +15,12 @@ app.get("/execute", (req, res) => {
   const { spawn } = require("child_process");
 
   let childProcess;
+  let pythonExePath = 'E:/param/software/python381/python';
+  let commandExePath = 'C:/Windows/System32/cmd.exe';
+  let scriptAbsoultPath = path.join( __dirname, "/scripts/"+req.query.script);
 
   res.set("Content-Type", "text/plain");
+
   switch(req.query.type){
 
     case 'command' :
@@ -25,22 +29,26 @@ app.get("/execute", (req, res) => {
         registerSTDIOStreams(childProcess, res);
         listenerChildProcessEvents(childProcess);
         break;
+
     case 'python' :
         console.log(`Given python-task is '${req.query.script}'`);
-        childProcess = spawn('E:/param/software/python381/python', [path.join( __dirname, "/scripts/"+req.query.script)], {shell: true });
+        childProcess = spawn(pythonExePath, [scriptAbsoultPath], {shell: true });
         registerSTDIOStreams(childProcess, res);
         listenerChildProcessEvents(childProcess);
         break;
+
     case 'batch' :
         console.log(`Given batch-task is '${req.query.script}'`);
-        console.log('Bath file path >', path.join( __dirname, "/scripts/"+req.query.script));
-        childProcess = spawn('cmd.exe', ['/c', path.join( __dirname, "/scripts/"+req.query.script)], {shell: true });
+        console.log('Bath file path >',scriptAbsoultPath);
+        // childProcess = spawn(commandExePath, ['/c', scriptAbsoultPath], {shell: true });
+        childProcess = spawn(scriptAbsoultPath, {shell: true });
         registerSTDIOStreams(childProcess, res);
         listenerChildProcessEvents(childProcess);
         break;
+
     default:
         console.log('Nothing matched ...')
-        res.end('Given Task cannot be executed');
+        res.end('This is Default Case and Nothing to executed');
   }  
 });
 
