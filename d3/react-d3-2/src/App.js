@@ -4,6 +4,15 @@ import BarChart from "./barchart/BarChart";
 import BasicShape from "./misc/basicshape";
 import ScatterPlot from "./scatterplot/ScatterPlot";
 import FootBall from "./scatterplot/football";
+import FriendsScattor from "./scatterplot/friendsScattor";
+import BoxPlot from './boxplot/boxplot';
+import LineChart from './linechart/linechart';
+import MovieStreamGraph from './streamgraph/moviestreamgraph';
+import HistogramLayout from './layouts/histogram';
+import ViolinPlot from './layouts/violinPlot';
+import SimplePieChart from './layouts/piechart';
+import StackAreaPlot from './layouts/stacklayout';
+
 
 import { scaleThreshold } from "d3-scale";
 
@@ -36,28 +45,51 @@ export default class App extends Component {
 
     return (
       <div className="App container">
-
         <div className="App-header row">
           <h2>D3 Dashboard</h2>
         </div>
         <div className="row m-2">
-          <FootBall size={[900, 300]} className='col'/>
-          <div id="controls"></div>
+          <StackAreaPlot size={[500, 500]} className="col" />
         </div>
-        <div className="row">
-          {/*  <BarChart
+
+       {/*  
+        <div className="row m-2">
+          <SimplePieChart size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <ViolinPlot size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <HistogramLayout size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <MovieStreamGraph size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <LineChart size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <BoxPlot size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <FriendsScattor size={[700, 300]} className="col" />
+        </div>
+        <div className="row m-2">
+          <BarChart
             data={[5, 10, 1, 3]}
             size={[this.state.screenWidth / 2, this.state.screenHeight / 2]}
             colorScale={colorScale}
-          /> */}
-          {/*  <BasicShape
-           
-            size={[500, 500]}
-           
-          /> */}
+          />
+        </div>
+        <div className="row m-2">
+          <FootBall size={[900, 300]} className="col" />
+          <div id="controls"></div>
+        </div>
+        <div className="row">
+          {<BasicShape size={[500, 500]} />}
           <p>Scattered Plot</p>
-          <ScatterPlot size={[500, 500]}  class='col'/>
-        </div>        
+          <ScatterPlot size={[500, 500]} class="col" />
+        </div> */}
       </div>
     );
   }

@@ -10,7 +10,7 @@ const registerSTDIOStreams = childProcess => {
 };
 
 
-let gitPath = "C:/Users/PA20011402/AppData/Local/Programs/Git/bin/git";
+let gitPath = "C:/Users/PA20011402/Downloads/PortableGit/bin/git";
 let repoAlias = 'books';
 let pushPath = "https://paramothers:Penn123$@github.com/paramothers";
 let cp;
