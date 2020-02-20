@@ -21,6 +21,8 @@ console.log("\n Stage ",repoAlias);
 cp = spawn(gitPath, ["-C", repoName, "add", "--all", "."], { shell: true });
 registerSTDIOStreams(cp);
 
+
+
 cp.on("close", (code, signal) => {
   console.log("\n Commit ",repoAlias);
   cp = spawn(gitPath, ["-C", repoName, "commit", '--message="Study D3"'], {

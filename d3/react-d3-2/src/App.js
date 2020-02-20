@@ -12,6 +12,8 @@ import HistogramLayout from './layouts/histogram';
 import ViolinPlot from './layouts/violinPlot';
 import SimplePieChart from './layouts/piechart';
 import StackAreaPlot from './layouts/stacklayout';
+import SankeyLayout from './layouts/sankeylayout';
+import CirclePack from './hierarchy/CirclePack';
 
 
 import { scaleThreshold } from "d3-scale";
@@ -49,10 +51,16 @@ export default class App extends Component {
           <h2>D3 Dashboard</h2>
         </div>
         <div className="row m-2">
-          <StackAreaPlot size={[500, 500]} className="col" />
+          <CirclePack size={[500, 500]} className="col" />
         </div>
 
        {/*  
+        <div className="row m-2">
+          <SankeyLayout size={[500, 500]} className="col" />
+        </div>
+        <div className="row m-2">
+          <StackAreaPlot size={[500, 500]} className="col" />
+        </div>
         <div className="row m-2">
           <SimplePieChart size={[500, 500]} className="col" />
         </div>
