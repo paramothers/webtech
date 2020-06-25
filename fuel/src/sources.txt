@@ -1,0 +1,10 @@
+./fuel/domain/FuelCostCalculationParams.java
+./fuel/thread/FuelThread.java
+./fuel/ui/FuelCostCalculatorUI.java
+./fuel/io/FuelCostFileReader.java
+./fuel/io/FuelCalculationFileWriter.java
+./fuel/network/binary/ClientBinary.java
+./fuel/network/binary/ServerBinary.java
+./fuel/network/text/ServerText.java
+./fuel/network/text/ClientText.java
+./fuel/util/ConstantUtil.java

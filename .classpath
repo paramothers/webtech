@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="fuel/src"/>
+	<classpathentry kind="src" path="reactNative/myProject/android/app/src/main/java"/>
+	<classpathentry kind="src" path="reactNative/ToDo/android/app/src/main/java"/>
+	<classpathentry kind="lib" path="fuel/jars/jfxswt.jar"/>
+	<classpathentry kind="lib" path="reactNative/myProject/android/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="reactNative/ToDo/android/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
